@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoCredit &mdash; Check your credit, then continue</title>
+<meta name="description" content="Check your credit, return here, and continue to explore your available options.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================
+     TOKENS
+  ============================ */
+  :root{
+    --burgundy: #6d1f2e;
+    --burgundy-dark: #48141f;
+    --burgundy-deeper: #350d15;
+    --cream: #f6efe4;
+    --cream-soft: #efe5d4;
+    --text: #241a17;
+    --text-soft: rgba(36,26,23,0.66);
+    --on-dark: #f6efe4;
+    --on-dark-soft: rgba(246,239,228,0.72);
+    --accent: #c9622f;
+    --line: rgba(36,26,23,0.12);
+    --line-dark: rgba(246,239,228,0.18);
+    --error: #a3372a;
+    --radius-s: 6px;
+    --radius-m: 14px;
+    --radius-l: 28px;
+    --container: 1160px;
+    --pad: clamp(20px, 5vw, 64px);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3{
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  p{ margin: 0; }
+  a{ color: inherit; text-decoration: none; }
+  img{ display:block; max-width:100%; }
+
+  .container{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ============================
+     BUTTONS
+  ============================ */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn:active{ transform: scale(0.98); }
+
+  .btn-cream{ background: var(--cream); color: var(--burgundy-dark); }
+  .btn-cream:hover{ background: #fffaf0; }
+
+  .btn-dark{ background: var(--text); color: var(--cream); }
+  .btn-dark:hover{ background: #3a2a24; }
+
+  .btn-outline-dark{
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+  }
+  .btn-outline-dark:hover{ background: rgba(36,26,23,0.05); }
+
+  .btn:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .btn:disabled:hover{ background: var(--text); }
+
+  /* ============================
+     HEADER
+  ============================ */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246,239,228,0.92);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--burgundy);
+  }
+  .header-right{
+    display:flex;
+    align-items:center;
+    gap: 28px;
+  }
+  .nav-link{
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text);
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .nav-link:hover{ opacity: 1; }
+  .header-cta{ padding: 11px 22px; font-size: 14px; }
+
+  @media (max-width: 640px){
+    .nav-link{ display:none; }
+  }
+
+  /* ============================
+     HERO
+  ============================ */
+  .hero{
+    background: linear-gradient(155deg, var(--burgundy) 0%, var(--burgundy-dark) 78%);
+    color: var(--on-dark);
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 48px;
+    padding-top: 76px;
+    padding-bottom: 76px;
+    min-height: 520px;
+  }
+  .hero-eyebrow{
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--on-dark-soft);
+    margin-bottom: 20px;
+  }
+  .hero h1{
+    font-size: clamp(36px, 4.4vw, 56px);
+    color: var(--on-dark);
+    max-width: 13ch;
+  }
+  .hero-sub{
+    margin-top: 22px;
+    font-size: 17px;
+    color: var(--on-dark-soft);
+    max-width: 42ch;
+    line-height: 1.6;
+  }
+  .hero-actions{
+    margin-top: 34px;
+    display:flex;
+    align-items:center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .hero-fineprint{
+    font-size: 12.5px;
+    color: rgba(246,239,228,0.5);
+  }
+  .hero-visual-frame{
+    width: 100%;
+    aspect-ratio: 4/3.1;
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+  .hero-visual-frame img{ width:100%; height:100%; object-fit: cover; }
+
+  @media (max-width: 860px){
+    .hero-inner{
+      grid-template-columns: 1fr;
+      padding-top: 52px;
+      padding-bottom: 52px;
+      min-height: unset;
+    }
+    .hero-visual{ order: -1; }
+    .hero h1{ max-width: none; }
+  }
+
+  /* ============================
+     SECTION SHELL
+  ============================ */
+  section{ padding-top: 96px; padding-bottom: 96px; }
+  .section-head{ max-width: 640px; margin-bottom: 56px; }
+  .section-head h2{ font-size: clamp(28px, 3.2vw, 40px); }
+  .section-head p{
+    margin-top: 16px;
+    font-size: 16.5px;
+    color: var(--text-soft);
+    max-width: 50ch;
+  }
+
+  /* ============================
+     HOW IT WORKS
+  ============================ */
+  .steps{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .step-card{
+    background: var(--cream-soft);
+    border-radius: var(--radius-m);
+    padding: 32px 28px;
+  }
+  .step-num{
+    font-family:'Fraunces', serif;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+  .step-card h3{ font-size: 21px; margin-bottom: 10px; }
+  .step-card p{ font-size: 15px; color: var(--text-soft); }
+  @media (max-width: 780px){ .steps{ grid-template-columns: 1fr; } }
+
+  .how-it-works-cta{ margin-top: 44px; }
+
+  /* ============================
+     UPLOAD SECTION
+  ============================ */
+  .upload-section{ background: var(--cream-soft); }
+  .upload-panel{
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    padding: clamp(28px, 4vw, 48px);
+    text-align: center;
+  }
+  .upload-panel h2{ font-size: clamp(26px, 3vw, 34px); }
+  .upload-panel > p{
+    margin-top: 14px;
+    font-size: 15.5px;
+    color: var(--text-soft);
+    max-width: 44ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .upload-dropzone{
+    margin-top: 32px;
+    border: 1.5px dashed var(--line);
+    border-radius: var(--radius-m);
+    padding: 32px 20px;
+    background: var(--cream-soft);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .upload-dropzone.has-file{
+    border-style: solid;
+    border-color: var(--accent);
+    background: #fbf3ea;
+  }
+
+  .upload-input-wrap{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 14px;
+  }
+
+  input[type="file"]{
+    /* visually hidden but accessible */
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .upload-label-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: var(--text);
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .upload-label-btn:hover{ background: #3a2a24; }
+
+  .upload-hint{
+    font-size: 13px;
+    color: var(--text-soft);
+  }
+
+  .upload-preview{
+    display: none;
+    margin-top: 22px;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    padding: 12px;
+  }
+  .upload-preview.is-visible{ display: flex; }
+  .upload-preview img{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+    flex-shrink: 0;
+  }
+  .upload-preview-meta{ overflow: hidden; }
+  .upload-preview-status{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .upload-preview-filename{
+    font-size: 13px;
+    color: var(--text-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .upload-error{
+    display: none;
+    margin-top: 18px;
+    font-size: 13.5px;
+    color: var(--error);
+  }
+  .upload-error.is-visible{ display: block; }
+
+  .upload-continue{ margin-top: 28px; width: 100%; }
+
+  @media (max-width: 480px){
+    .upload-continue{ padding: 13px 20px; }
+  }
+
+  /* ============================
+     FINAL CTA
+  ============================ */
+  .final-cta{
+    background: linear-gradient(155deg, var(--burgundy) 0%, var(--burgundy-dark) 85%);
+    color: var(--on-dark);
+    text-align:center;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+  }
+  .final-cta.is-active{
+    max-height: 640px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .final-cta .container{ max-width: 640px; }
+  .final-cta h2{ color: var(--on-dark); font-size: clamp(30px, 4vw, 44px); }
+  .final-cta p{ margin-top: 16px; color: var(--on-dark-soft); font-size: 16.5px; }
+  .final-cta .btn{ margin-top: 32px; }
+
+  /* ============================
+     FOOTER
+  ============================ */
+  footer{
+    border-top: 1px solid var(--line);
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-links{ display:flex; gap: 24px; }
+  .footer-links a{ font-size: 14px; color: var(--text-soft); }
+  .footer-links a:hover{ color: var(--text); }
+
+  /* ============================
+     REVEAL ANIMATION
+  ============================ */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <span class="logo">AutoCredit</span>
+    <div class="header-right">
+      <button class="nav-link" id="header-how-it-works">How It Works</button>
+      <a href="YOUR_CREDIT_SCORE_LINK" class="btn btn-dark header-cta" id="header-check-credit">Check Your Credit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:0; padding-bottom:0;">
+    <div class="container hero-inner">
+      <div>
+        <p class="hero-eyebrow">A credit option built around your vehicle</p>
+        <h1>Take the first step toward your credit options.</h1>
+        <p class="hero-sub">Check your credit, return here, and continue to explore your available options.</p>
+        <div class="hero-actions">
+          <a href="YOUR_CREDIT_SCORE_LINK" class="btn btn-cream" id="hero-check-credit">Check Your Credit</a>
+          <span class="hero-fineprint">Opens in a new tab &mdash; come back when you're done</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-frame">
+          <img id="hero-image" src="YOUR_HERO_IMAGE_URL" alt="A person checking their credit near their vehicle">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>How it works</h2>
+        <p>Three steps between checking your credit and seeing your options.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Check your credit</h3>
+          <p>Head over to check your credit score. This opens in a separate tab.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Return &amp; upload</h3>
+          <p>Come back here and attach a screenshot of your results.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Continue</h3>
+          <p>Once your screenshot is attached, continue on to your options.</p>
+        </div>
+      </div>
+      <div class="how-it-works-cta reveal">
+        <a href="YOUR_CREDIT_SCORE_LINK" class="btn btn-outline-dark" id="how-it-works-check-credit">Check Your Credit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD -->
+  <section class="upload-section">
+    <div class="container">
+      <div class="upload-panel reveal">
+        <h2>Upload your credit score</h2>
+        <p>After checking your credit, return here and attach your screenshot to continue.</p>
+
+        <div class="upload-dropzone" id="upload-dropzone">
+          <div class="upload-input-wrap">
+            <label class="upload-label-btn" for="credit-score-upload">Choose screenshot</label>
+            <input type="file" id="credit-score-upload" accept="image/*">
+            <span class="upload-hint">PNG, JPG, or HEIC &mdash; kept on this page only</span>
+          </div>
+
+          <div class="upload-preview" id="credit-score-preview">
+            <img id="upload-preview-image" src="" alt="Selected credit score screenshot preview">
+            <div class="upload-preview-meta">
+              <div class="upload-preview-status">&#10003; Credit score screenshot attached</div>
+              <div class="upload-preview-filename" id="upload-preview-filename"></div>
+            </div>
+          </div>
+
+          <p class="upload-error" id="upload-error">That file doesn't look like an image. Please choose a screenshot (PNG, JPG, or similar).</p>
+        </div>
+
+        <button class="btn btn-dark upload-continue" id="continue-after-upload" disabled>Continue</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA (revealed after Continue) -->
+  <section class="final-cta" id="final-cta-section">
+    <div class="container">
+      <h2 class="reveal">You're ready for the next step.</h2>
+      <p class="reveal">Continue to explore the available credit option.</p>
+      <a href="YOUR_YENDO_AFFILIATE_LINK" class="btn btn-cream reveal" id="final-yendo-cta">Continue to Your Options</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo">AutoCredit</span>
+    <div class="footer-links">
+      <a href="YOUR_FOOTER_PRIVACY_LINK" id="footer-privacy">Privacy</a>
+      <a href="YOUR_FOOTER_TERMS_LINK" id="footer-terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Smooth scroll: header "How It Works" ----
+  document.getElementById('header-how-it-works').addEventListener('click', function(){
+    var target = document.getElementById('how-it-works');
+    if(target){
+      var headerHeight = document.querySelector('header').offsetHeight;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight + 1;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+
+  // ---- Upload handling ----
+  var fileInput = document.getElementById('credit-score-upload');
+  var dropzone = document.getElementById('upload-dropzone');
+  var previewBox = document.getElementById('credit-score-preview');
+  var previewImage = document.getElementById('upload-preview-image');
+  var previewFilename = document.getElementById('upload-preview-filename');
+  var errorMsg = document.getElementById('upload-error');
+  var continueBtn = document.getElementById('continue-after-upload');
+
+  function resetUploadState(){
+    previewBox.classList.remove('is-visible');
+    dropzone.classList.remove('has-file');
+    continueBtn.disabled = true;
+  }
+
+  fileInput.addEventListener('change', function(){
+    errorMsg.classList.remove('is-visible');
+
+    var file = fileInput.files && fileInput.files[0];
+    if(!file){
+      resetUploadState();
+      return;
+    }
+
+    if(file.type.indexOf('image/') !== 0){
+      resetUploadState();
+      errorMsg.classList.add('is-visible');
+      fileInput.value = '';
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function(e){
+      previewImage.src = e.target.result;
+      previewFilename.textContent = file.name;
+      previewBox.classList.add('is-visible');
+      dropzone.classList.add('has-file');
+      continueBtn.disabled = false;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ---- Continue: reveal the final CTA section, no auto-redirect ----
+  var finalCta = document.getElementById('final-cta-section');
+  continueBtn.addEventListener('click', function(){
+    if(continueBtn.disabled) return;
+    finalCta.classList.add('is-active');
+    finalCta.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.add('is-visible');
+    });
+    setTimeout(function(){
+      finalCta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  });
+
+  // ---- Single, subtle on-load/on-scroll reveal pass ----
+  var revealEls = document.querySelectorAll('.reveal:not(.final-cta .reveal)');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(function(el){ observer.observe(el); });
+</script>
+
+</body>
+</html>
