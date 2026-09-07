@@ -2,1263 +2,1525 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Explore vehicle-backed credit, understand how it works, check your credit as one step, and continue to your available options.">
-<title>The Auto Card — Vehicle-Backed Credit | V3</title>
+<title>The Auto Card — Vehicle-Backed Credit</title>
+
 <style>
+/* =========================================================
+   V4 — MOBILE-FIRST / EDITORIAL LANDING PAGE
+   Content is intentionally kept from the previous version.
+   This version focuses on SCALE, HIERARCHY, SPACING and MOBILE UX.
+   ========================================================= */
+
 :root{
-  --red:#760b22;
-  --red2:#5b0719;
-  --orange:#ff6537;
-  --orange2:#f58b64;
-  --cream:#f8f3eb;
-  --cream2:#eee6da;
-  --ink:#181416;
-  --muted:#746b69;
-  --white:#fffdf9;
-  --line:rgba(24,20,22,.12);
-  --max:1180px;
-  --radius:8px;
+  --burgundy:#760b22;
+  --burgundy-dark:#5d0719;
+  --orange:#ff6235;
+  --orange-soft:#ff9271;
+  --cream:#f7f2e9;
+  --cream-deep:#eee5d8;
+  --paper:#fffdf8;
+  --black:#151213;
+  --text:#211b1c;
+  --muted:#716766;
+  --line:rgba(33,27,28,.13);
+  --white:#fff;
+  --max:1160px;
+  --gutter:clamp(20px,4vw,46px);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+body,button,input{font-family:Arial,Helvetica,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
 button{cursor:pointer}
-.container{width:min(calc(100% - 44px),var(--max));margin:auto}
-.serif,h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em;line-height:.96}
-.kicker{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:15px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 19px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800;transition:.2s}
-.btn:hover{transform:translateY(-1px)}
-.btn-light{background:#fff;color:var(--red)}
-.btn-red{background:var(--red);color:#fff}
+.container{
+  width:min(calc(100% - (var(--gutter) * 2)),var(--max));
+  margin-inline:auto;
+}
+.serif,h1,h2,h3{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  letter-spacing:-.045em;
+  line-height:.96;
+}
+.kicker{
+  margin:0 0 14px;
+  color:var(--burgundy);
+  font-size:11px;
+  line-height:1.1;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.section{
+  padding-block:clamp(64px,8vw,104px);
+}
+.section-head{max-width:760px}
+.section-head h2{
+  margin:0;
+  font-size:clamp(44px,6vw,70px);
+}
+.section-head p{
+  max-width:650px;
+  margin:20px 0 0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.55;
+}
+.btn{
+  min-height:46px;
+  padding:0 21px;
+  border:0;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  line-height:1;
+  font-weight:800;
+  white-space:nowrap;
+  transition:transform .2s ease,opacity .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--burgundy)}
 .btn-orange{background:var(--orange);color:#fff}
-.btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
-.section{padding:82px 0}
-.section-head{max-width:720px}
-.section-head h2{font-size:clamp(43px,5.5vw,67px);margin:0}
-.section-head p{max-width:620px;margin:17px 0 0;color:var(--muted);font-size:13px}
+.btn-red{background:var(--burgundy);color:#fff}
 
-/* HEADER */
-.header{position:absolute;z-index:20;left:0;right:0;top:0;color:#fff}
-.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:12px;display:flex;align-items:center;gap:7px}
-.logo-mark{width:19px;height:19px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center;font-size:8px}
-.nav-links{display:flex;align-items:center;gap:23px;font-size:9px;font-weight:700}
-.nav-links a{opacity:.9}
-.nav-check{border:1px solid rgba(255,255,255,.65);padding:7px 11px;border-radius:999px}
+/* ================= HEADER ================= */
+.header{
+  position:absolute;
+  z-index:20;
+  inset:0 0 auto;
+  color:#fff;
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:900;
+}
+.logo-mark{
+  width:21px;
+  height:21px;
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:8px;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  font-size:11px;
+  font-weight:700;
+}
+.nav-links a{opacity:.94}
+.nav-check{
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:999px;
+}
 
-/* HERO — intentionally follows the reference: red/wine field + orange card/image */
+/* ================= HERO ================= */
 .hero{
-  min-height:600px;color:#fff;position:relative;overflow:hidden;
+  min-height:650px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
   background:
-    linear-gradient(100deg,rgba(82,5,20,.96) 0%,rgba(112,8,30,.91) 52%,rgba(112,8,30,.58) 100%),
+    linear-gradient(100deg,rgba(78,5,20,.98) 0%,rgba(112,8,30,.93) 54%,rgba(112,8,30,.64) 100%),
     url("YOUR_HERO_BACKGROUND_IMAGE_URL") center/cover no-repeat;
 }
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 48%,rgba(255,101,55,.30),transparent 28%);pointer-events:none}
-.hero-inner{min-height:600px;display:flex;align-items:center;position:relative;z-index:2}
-.hero-copy{width:53%;padding-top:35px}
-.hero h1{font-size:clamp(51px,7vw,83px);margin:0;max-width:570px}
-.hero-sub{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.02;max-width:420px;margin:17px 0 0}
-.hero-text{font-size:11px;color:rgba(255,255,255,.78);max-width:420px;margin:14px 0 0}
-.hero-points{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:5px;font-size:10px;font-weight:700}
-.hero-points li:before{content:"✓";color:#ffab8d;margin-right:7px}
-.hero-actions{margin-top:23px;display:flex;gap:9px}
-.hero-note{font-size:8px;color:rgba(255,255,255,.5);margin-top:9px}
-.hero-product-visual{
-  position:absolute;right:-5%;top:50%;transform:translateY(-50%);
-  width:52%;height:480px;
-  background:url("YOUR_HERO_CARD_IMAGE_URL") center/contain no-repeat;
-  filter:drop-shadow(0 30px 35px rgba(20,0,5,.3));
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 82% 47%,rgba(255,98,53,.34),transparent 29%);
 }
-.hero-image-id{position:absolute;width:1px;height:1px;overflow:hidden;opacity:0}
+.hero-inner{
+  min-height:650px;
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+}
+.hero-copy{
+  position:relative;
+  z-index:3;
+  width:58%;
+  padding-top:40px;
+}
+.hero h1{
+  max-width:720px;
+  margin:0;
+  font-size:clamp(56px,7vw,88px);
+}
+.hero-sub{
+  max-width:510px;
+  margin-top:19px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+  line-height:1.04;
+}
+.hero-text{
+  max-width:540px;
+  margin:17px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:13px;
+  line-height:1.55;
+}
+.hero-points{
+  list-style:none;
+  margin:18px 0 0;
+  padding:0;
+  display:grid;
+  gap:7px;
+  font-size:12px;
+  font-weight:700;
+}
+.hero-points li:before{
+  content:"✓";
+  margin-right:8px;
+  color:var(--orange-soft);
+}
+.hero-actions{margin-top:25px}
+.hero-note{
+  margin-top:10px;
+  color:rgba(255,255,255,.52);
+  font-size:9px;
+}
+.hero-product-visual{
+  position:absolute;
+  z-index:2;
+  right:-7%;
+  top:50%;
+  width:54%;
+  height:530px;
+  transform:translateY(-50%);
+  background:url("YOUR_HERO_CARD_IMAGE_URL") center/contain no-repeat;
+  filter:drop-shadow(0 28px 38px rgba(15,0,5,.3));
+}
 
-/* STATS */
-.stats{background:var(--cream);border-bottom:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{min-height:82px;padding:20px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
-.stat:last-child{border:0}
-.stat strong{font-family:Georgia,serif;font-size:21px;font-weight:400}
-.stat span{font-size:8px;color:var(--muted);margin-top:2px}
+/* ================= STATS ================= */
+.stats{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+.stat{
+  min-height:105px;
+  padding:22px 24px;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.stat:last-child{border-right:0}
+.stat strong{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  line-height:1;
+  font-weight:400;
+}
+.stat span{
+  max-width:190px;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.35;
+}
 
-/* THREE STEPS */
-.steps{background:var(--cream)}
-.steps-head{text-align:center;max-width:700px;margin:auto}
-.steps-head h2{font-size:clamp(38px,4.8vw,58px)}
-.steps-head p{font-size:12px;color:var(--muted);margin-top:13px}
-.steps-grid{margin-top:35px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
-.step{min-height:265px;background:var(--red);color:#fff;padding:20px 20px 16px;position:relative;overflow:hidden}
-.step:nth-child(2){background:#6a0a20}
+/* ================= PRODUCT STEPS ================= */
+.steps{
+  background:var(--cream);
+}
+.steps-head{
+  max-width:760px;
+  margin-inline:auto;
+  text-align:center;
+}
+.steps-head h2{
+  margin:0;
+  font-size:clamp(45px,6vw,67px);
+}
+.steps-head p{
+  max-width:650px;
+  margin:18px auto 0;
+  color:var(--muted);
+  font-size:14px;
+}
+.steps-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+}
+.step{
+  min-height:335px;
+  padding:27px 27px 20px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  background:var(--burgundy);
+}
+.step:nth-child(2){background:#69091f}
 .step:nth-child(3){background:#720b23}
-.step-no{font-size:10px;border:1px solid rgba(255,255,255,.45);width:23px;height:23px;border-radius:50%;display:grid;place-items:center}
-.step h3{font-size:27px;margin:28px 0 0}
-.step p{font-size:9px;color:rgba(255,255,255,.72);max-width:230px;margin-top:9px}
-.step-art{height:85px;margin-top:15px;background:center/contain no-repeat}
+.step-no{
+  width:29px;
+  height:29px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:10px;
+  font-weight:700;
+}
+.step h3{
+  max-width:270px;
+  margin:28px 0 0;
+  font-size:31px;
+}
+.step p{
+  max-width:285px;
+  margin:11px 0 0;
+  color:rgba(255,255,255,.75);
+  font-size:11px;
+  line-height:1.45;
+}
+.step-art{
+  height:105px;
+  margin-top:21px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
 .step-art1{background-image:url("YOUR_STEP_ONE_IMAGE_URL")}
 .step-art2{background-image:url("YOUR_STEP_TWO_IMAGE_URL")}
 .step-art3{background-image:url("YOUR_STEP_THREE_IMAGE_URL")}
 
-/* VEHICLE */
-.vehicle{background:#141113;color:#fff;padding:0}
-.vehicle-inner{min-height:350px;display:grid;grid-template-columns:.9fr 1.1fr}
-.vehicle-copy{padding:62px 45px 62px 0;display:flex;flex-direction:column;justify-content:center}
-.vehicle .kicker{color:#ff9b7a}
-.vehicle h2{font-size:clamp(40px,5vw,58px);margin:0}
-.vehicle-copy p{font-size:10px;color:rgba(255,255,255,.67);max-width:410px;margin:15px 0 0}
-.vehicle-points{margin-top:20px;display:grid;gap:9px}
-.vehicle-point{display:flex;gap:9px;font-size:9px;color:rgba(255,255,255,.72)}
-.vehicle-point b{color:#fff}
-.vehicle-image{min-height:350px;background:url("YOUR_VEHICLE_LIFESTYLE_IMAGE_URL") center/cover no-repeat}
-
-/* TITLE */
-.title-section{background:var(--cream)}
-.title-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-.title-image{min-height:360px;background:url("YOUR_TITLE_IMAGE_URL") center/cover no-repeat;border-radius:6px}
-.title-copy h2{font-size:clamp(40px,5vw,59px);margin:0}
-.title-copy p{font-size:11px;color:var(--muted);margin-top:15px}
-.title-list{list-style:none;padding:0;margin:20px 0;display:grid;gap:11px}
-.title-list li{font-size:10px;display:flex;gap:8px}
-.title-list li:before{content:"✓";color:var(--red);font-weight:900}
-
-/* WHAT YOU NEED */
-.need{background:var(--cream)}
-.need-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:34px}
-.need-card{background:var(--white);padding:30px 32px;min-height:210px;border-radius:5px}
-.need-card.dark{background:var(--red);color:#fff}
-.need-card h3{font-size:30px;margin:0}
-.need-card p{font-size:10px;color:var(--muted);margin-top:12px}
-.need-card.dark p{color:rgba(255,255,255,.7)}
-.need-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:7px}
-.need-list li{font-size:9px}
-.need-list li:before{content:"✓";margin-right:7px;color:var(--orange)}
-
-/* WHAT YOU GET — reference-like 3x2 cards */
-.get{background:var(--cream)}
-.get-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:34px}
-.get-card{background:#eee7dd;padding:23px 22px;min-height:155px}
-.get-card h3{font-size:24px;margin:24px 0 0}
-.get-card p{font-size:9px;color:var(--muted);margin-top:8px}
-.get-icon{width:19px;height:19px;border:1px solid rgba(118,11,34,.35);border-radius:4px;display:grid;place-items:center;font-size:8px;color:var(--red)}
-.get-note{text-align:center;font-size:9px;color:var(--muted);margin-top:16px}
-
-/* REFINANCE STRIP */
-.refi{padding:45px 0;background:var(--cream)}
-.refi-box{
-  background:linear-gradient(110deg,var(--red),#580617);
-  color:#fff;border-radius:6px;padding:36px 40px;
-  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;
+/* ================= VEHICLE ================= */
+.vehicle{
+  background:var(--black);
+  color:#fff;
 }
-.refi-box h2{font-size:clamp(32px,4vw,49px);margin:0}
-.refi-box p{font-size:10px;color:rgba(255,255,255,.68);margin:10px 0 0}
-.refi-side{border-left:1px solid rgba(255,255,255,.2);padding-left:30px;display:grid;gap:12px}
-.refi-side div{font-size:9px;color:rgba(255,255,255,.7)}
-.refi-side b{display:block;color:#fff;font-size:10px;margin-bottom:3px}
-
-/* CREDIT CHECK — only one custom step */
-.credit{background:var(--cream);padding:60px 0 20px}
-.credit-box{
-  background:#fff;border:1px solid var(--line);border-radius:6px;
-  padding:38px 42px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
-}
-.credit .kicker{margin-bottom:10px}
-.credit h2{font-size:clamp(36px,4.8vw,54px);margin:0}
-.credit p{font-size:11px;color:var(--muted);max-width:590px;margin:12px 0 0}
-.credit-action{text-align:right}
-.credit-action-label{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--red);margin-bottom:8px}
-
-/* UPLOAD REVEALED AFTER RETURN */
-.upload{display:none;background:var(--cream);padding:45px 0 20px}
-.upload.visible{display:block}
-.upload-grid{display:grid;grid-template-columns:1fr .85fr;gap:55px;align-items:center}
-.upload h2{font-size:clamp(42px,5vw,60px);margin:0}
-.upload-intro{font-size:12px;color:var(--muted);max-width:560px;margin-top:14px}
-.upload-box{background:#fff;border:1px dashed rgba(118,11,34,.35);border-radius:6px;padding:30px}
-.upload-box h3{font-size:29px;margin:0}
-.upload-box p{font-size:10px;color:var(--muted);margin:8px 0 0}
-.file-input{display:none}
-.choose{margin-top:19px;display:inline-flex;min-height:40px;padding:0 17px;align-items:center;border-radius:999px;background:var(--red);color:#fff;font-size:10px;font-weight:800;cursor:pointer}
-.file-name{font-size:9px;color:var(--muted);margin-top:9px;min-height:14px}
-.preview{display:none;margin-top:14px;max-width:180px;max-height:180px;object-fit:contain;border:1px solid var(--line);border-radius:4px}
-.preview.visible{display:block}
-.continue{width:100%;margin-top:15px;border:0;background:#bdb7b2;color:#fff;opacity:.55;pointer-events:none}
-.continue.ready{background:var(--orange);opacity:1;pointer-events:auto}
-.upload-disclaimer{font-size:8px!important;color:#918887!important}
-
-/* NEXT STEP */
-.next-step{display:none;background:var(--red);color:#fff;padding:48px 30px;text-align:center;border-radius:6px;margin-top:25px}
-.next-step.visible{display:block}
-.next-step .kicker{color:#ffab8f}
-.next-step h2{font-size:clamp(39px,5vw,60px);margin:0 auto;max-width:720px}
-.next-step p{font-size:11px;color:rgba(255,255,255,.7);max-width:600px;margin:13px auto 21px}
-.next-step .btn{background:#fff;color:var(--red)}
-.next-note{font-size:8px!important;color:rgba(255,255,255,.45)!important;margin-top:9px!important}
-
-/* TESTIMONIALS */
-.testimonials{background:var(--cream);padding:65px 0}
-.test-head{text-align:center}
-.test-head h2{font-size:42px;margin:0}
-.test-grid{display:flex;gap:5px;justify-content:center;align-items:end;margin-top:28px;overflow:hidden}
-.person{width:125px;height:170px;border-radius:4px;background:center/cover no-repeat;position:relative;opacity:.65}
-.person.active{height:205px;width:145px;opacity:1}
-.person span{position:absolute;left:8px;bottom:8px;color:#fff;font-size:8px;font-weight:700;text-shadow:0 1px 4px #000}
-
-/* TERMS */
-.terms{background:var(--cream);padding:70px 0}
-.terms-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
-.terms h2{font-size:43px;margin:0}
-.rate-table{border-top:1px solid var(--line)}
-.rate-row{display:grid;grid-template-columns:1fr 1fr;padding:11px 14px;border-bottom:1px solid var(--line);font-size:9px}
-.rate-row:nth-child(even){background:#eee7dd}
-.rate-note{font-size:8px;color:var(--muted);margin-top:10px}
-
-/* FAQ */
-.faq{background:var(--cream);padding:55px 0 75px}
-.faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px}
-.faq h2{font-size:43px;margin:0}
-.faq-list{border-top:1px solid var(--line)}
-details{border-bottom:1px solid var(--line);padding:12px 0}
-summary{list-style:none;cursor:pointer;font-size:10px;font-weight:800;display:flex;justify-content:space-between;gap:20px}
-summary::-webkit-details-marker{display:none}
-summary:after{content:"+"}
-details[open] summary:after{content:"−"}
-details p{font-size:9px;color:var(--muted);max-width:700px;margin:8px 0}
-
-/* FINAL CTA — product journey, not credit journey */
-.final{background:#111011;color:#fff;padding:0}
-.final-inner{min-height:330px;display:flex;align-items:center;position:relative;overflow:hidden}
-.final-copy{position:relative;z-index:2;max-width:430px}
-.final .kicker{color:#ff9b7a}
-.final h2{font-size:clamp(43px,5vw,60px);margin:0}
-.final p{font-size:10px;color:rgba(255,255,255,.68);margin:13px 0 19px}
-.final-image{position:absolute;right:-2%;top:0;bottom:0;width:55%;background:url("YOUR_FINAL_CTA_IMAGE_URL") center/cover no-repeat;opacity:.95}
-.final-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#111011 0%,rgba(17,16,17,.65) 22%,transparent 65%)}
-
-/* FOOTER */
-footer{background:#111011;color:#fff;padding:35px 0 20px;border-top:1px solid rgba(255,255,255,.08)}
-.footer-top{display:flex;justify-content:space-between;gap:50px}
-.footer-brand{max-width:400px}
-.footer-brand p{font-size:8px;color:rgba(255,255,255,.42);margin-top:10px}
-.footer-links{display:flex;gap:55px}
-.footer-col strong{font-size:9px}
-.footer-col a{display:block;font-size:8px;color:rgba(255,255,255,.45);margin-top:7px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:13px;display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,.35)}
-
-/* RESPONSIVE */
-@media(max-width:850px){
-  .hero-copy{width:62%}
-  .hero-product-visual{width:48%;right:-10%;opacity:.85}
-  .title-grid,.terms-grid,.faq-grid,.upload-grid{grid-template-columns:1fr;gap:30px}
-  .title-image{min-height:280px}
-  .credit-box{grid-template-columns:1fr}
-  .credit-action{text-align:left}
-  .refi-box{grid-template-columns:1fr}
-  .refi-side{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:17px 0 0}
-  .test-grid{justify-content:flex-start}
-}
-@media(max-width:620px){
-  .container{width:min(calc(100% - 28px),var(--max))}
-  .nav-links a:not(.nav-check){display:none}
-  .hero{min-height:680px}
-  .hero-inner{min-height:680px;align-items:flex-start;padding-top:125px}
-  .hero-copy{width:100%}
-  .hero-product-visual{top:auto;bottom:-25px;transform:none;width:72%;height:290px;right:-13%;opacity:.65}
-  .hero h1{font-size:53px;max-width:430px}
-  .hero-sub{font-size:17px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .stat{border-bottom:1px solid var(--line)}
-  .stat:nth-child(2){border-right:0}
-  .steps-grid,.get-grid,.need-grid{grid-template-columns:1fr}
-  .step{min-height:245px}
-  .vehicle-inner{grid-template-columns:1fr}
-  .vehicle-copy{padding:55px 0}
-  .vehicle-image{min-height:270px}
-  .section{padding:65px 0}
-  .footer-top,.footer-bottom{flex-direction:column}
-  .footer-links{gap:30px}
-  .final-image{width:70%;opacity:.45}
-}
-
-/* =========================================================
-   V3 VISUAL HIERARCHY + MOBILE OPTIMIZATION
-   Content is intentionally unchanged.
-   This layer fixes scale, spacing, hierarchy and readability.
-   ========================================================= */
-
-body{
-  font-size:16px;
-  line-height:1.55;
-  overflow-x:hidden;
-}
-.container{
-  width:min(calc(100% - 64px),1280px);
-}
-.section{
-  padding:105px 0;
-}
-.kicker{
-  font-size:11px;
-  letter-spacing:.16em;
-  margin-bottom:18px;
-}
-.section-head h2,
-.section-head h2,
-.steps-head h2{
-  font-size:clamp(48px,5.2vw,76px);
-  line-height:.94;
-}
-.section-head p{
-  font-size:15px;
-  line-height:1.65;
-  max-width:700px;
-}
-
-/* Header */
-.nav{
-  height:82px;
-}
-.logo{
-  font-size:13px;
-}
-.nav-links{
-  gap:30px;
-  font-size:11px;
-}
-.nav-check{
-  padding:9px 15px;
-}
-
-/* Hero */
-.hero,
-.hero-inner{
-  min-height:720px;
-}
-.hero-copy{
-  width:56%;
-  padding-top:55px;
-}
-.hero h1{
-  font-size:clamp(58px,7vw,94px);
-  line-height:.9;
-  max-width:690px;
-}
-.hero-sub{
-  font-size:24px;
-  line-height:1.08;
-  max-width:540px;
-  margin-top:22px;
-}
-.hero-text{
-  font-size:14px;
-  line-height:1.6;
-  max-width:535px;
-  margin-top:18px;
-}
-.hero-points{
-  margin-top:20px;
-  gap:8px;
-  font-size:12px;
-}
-.hero-actions{
-  margin-top:28px;
-}
-.btn{
-  min-height:48px;
-  padding:0 23px;
-  font-size:12px;
-}
-.hero-note{
-  font-size:9px;
-  margin-top:11px;
-}
-.hero-product-visual{
-  width:53%;
-  height:560px;
-}
-
-/* Stats */
-.stats-grid{
-  grid-template-columns:repeat(4,1fr);
-}
-.stat{
-  min-height:112px;
-  padding:25px 30px;
-}
-.stat strong{
-  font-size:30px;
-}
-.stat span{
-  font-size:10px;
-  line-height:1.4;
-  margin-top:6px;
-}
-
-/* Three steps */
-.steps-head{
-  max-width:850px;
-}
-.steps-head h2{
-  font-size:clamp(48px,5.2vw,70px);
-  margin:0;
-}
-.steps-head p{
-  font-size:14px;
-  line-height:1.6;
-}
-.steps-grid{
-  margin-top:48px;
-  gap:8px;
-}
-.step{
-  min-height:355px;
-  padding:28px 28px 20px;
-}
-.step-no{
-  width:30px;
-  height:30px;
-  font-size:10px;
-}
-.step h3{
-  font-size:34px;
-  line-height:.98;
-  margin-top:35px;
-}
-.step p{
-  font-size:12px;
-  line-height:1.55;
-  max-width:300px;
-}
-.step-art{
-  height:115px;
-  margin-top:25px;
-}
-
-/* Vehicle section */
 .vehicle-inner{
-  min-height:500px;
-  grid-template-columns:.9fr 1.1fr;
+  min-height:430px;
+  display:grid;
+  grid-template-columns:1fr 1.08fr;
 }
 .vehicle-copy{
-  padding:85px 55px 85px 0;
+  padding:76px 55px 76px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
+.vehicle .kicker{color:var(--orange-soft)}
 .vehicle h2{
-  font-size:clamp(48px,5vw,70px);
-  line-height:.93;
+  max-width:560px;
+  margin:0;
+  font-size:clamp(46px,5.7vw,68px);
 }
-.vehicle-copy p{
-  font-size:14px;
-  line-height:1.65;
-  max-width:500px;
-  margin-top:19px;
+.vehicle-copy>p{
+  max-width:490px;
+  margin:19px 0 0;
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+  line-height:1.55;
 }
 .vehicle-points{
-  margin-top:27px;
-  gap:13px;
+  max-width:510px;
+  margin-top:24px;
+  display:grid;
+  gap:12px;
 }
 .vehicle-point{
-  font-size:12px;
-  line-height:1.45;
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:8px;
+  color:rgba(255,255,255,.7);
+  font-size:11px;
 }
+.vehicle-point b{color:#fff}
 .vehicle-image{
-  min-height:500px;
+  min-height:430px;
+  background:url("YOUR_VEHICLE_LIFESTYLE_IMAGE_URL") center/cover no-repeat;
 }
 
-/* Title */
+/* ================= TITLE ================= */
+.title-section{background:var(--cream)}
 .title-grid{
-  gap:90px;
-}
-.title-image{
-  min-height:480px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
 }
 .title-copy h2{
-  font-size:clamp(48px,5vw,70px);
-  line-height:.93;
+  max-width:570px;
+  margin:0;
+  font-size:clamp(46px,5.7vw,67px);
 }
-.title-copy p{
-  font-size:14px;
-  line-height:1.65;
+.title-copy>p{
+  max-width:550px;
+  margin:19px 0 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
 }
 .title-list{
-  margin-top:27px;
-  gap:13px;
+  list-style:none;
+  margin:23px 0 0;
+  padding:0;
+  display:grid;
+  gap:11px;
 }
 .title-list li{
   font-size:12px;
-  line-height:1.45;
+  display:flex;
+  gap:9px;
+}
+.title-list li:before{
+  content:"✓";
+  color:var(--burgundy);
+  font-weight:900;
+}
+.title-image{
+  min-height:390px;
+  border-radius:7px;
+  background:url("YOUR_TITLE_IMAGE_URL") center/cover no-repeat;
 }
 
-/* Need */
+/* ================= NEED ================= */
+.need{background:var(--cream)}
 .need-grid{
-  gap:8px;
-  margin-top:48px;
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
 }
 .need-card{
-  padding:38px 38px;
-  min-height:270px;
+  min-height:260px;
+  padding:34px;
+  border-radius:6px;
+  background:var(--paper);
+}
+.need-card.dark{
+  background:var(--burgundy);
+  color:#fff;
 }
 .need-card h3{
-  font-size:36px;
+  margin:0;
+  font-size:35px;
 }
 .need-card p{
-  font-size:13px;
-  line-height:1.6;
   max-width:450px;
+  margin:13px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
 }
+.need-card.dark p{color:rgba(255,255,255,.72)}
 .need-list{
-  margin-top:22px;
-  gap:10px;
+  list-style:none;
+  margin:21px 0 0;
+  padding:0;
+  display:grid;
+  gap:8px;
 }
 .need-list li{
   font-size:11px;
 }
+.need-list li:before{
+  content:"✓";
+  margin-right:8px;
+  color:var(--orange);
+}
 
-/* Get */
+/* ================= GET ================= */
+.get{background:var(--cream-deep)}
 .get-grid{
-  gap:8px;
-  margin-top:48px;
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
 }
 .get-card{
-  padding:30px;
-  min-height:205px;
+  min-height:190px;
+  padding:26px;
+  background:rgba(255,253,248,.65);
+  border:1px solid rgba(33,27,28,.05);
 }
 .get-icon{
-  width:25px;
-  height:25px;
+  width:24px;
+  height:24px;
+  border:1px solid rgba(118,11,34,.3);
+  border-radius:5px;
+  display:grid;
+  place-items:center;
+  color:var(--burgundy);
   font-size:9px;
+  font-weight:800;
 }
 .get-card h3{
-  font-size:29px;
-  margin-top:28px;
+  margin:27px 0 0;
+  font-size:27px;
 }
 .get-card p{
+  max-width:290px;
+  margin:9px 0 0;
+  color:var(--muted);
   font-size:11px;
-  line-height:1.55;
+  line-height:1.45;
 }
 .get-note{
+  margin-top:17px;
+  text-align:center;
+  color:var(--muted);
   font-size:10px;
-  margin-top:19px;
 }
 
-/* Refinance */
+/* ================= REFINANCE ================= */
 .refi{
-  padding:65px 0;
+  padding-block:58px;
+  background:var(--cream);
 }
 .refi-box{
-  padding:48px 50px;
-  gap:55px;
+  padding:42px 46px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+  border-radius:7px;
+  color:#fff;
+  background:linear-gradient(105deg,var(--burgundy),#590718);
 }
 .refi-box h2{
-  font-size:clamp(40px,4.5vw,60px);
-  line-height:.94;
+  max-width:620px;
+  margin:0;
+  font-size:clamp(40px,5vw,58px);
 }
 .refi-box p{
+  max-width:610px;
+  margin:14px 0 0;
+  color:rgba(255,255,255,.7);
   font-size:12px;
-  line-height:1.6;
 }
 .refi-side{
-  padding-left:40px;
-  gap:17px;
+  padding-left:32px;
+  border-left:1px solid rgba(255,255,255,.2);
+  display:grid;
+  align-content:center;
+  gap:15px;
 }
 .refi-side div{
+  color:rgba(255,255,255,.7);
   font-size:11px;
-  line-height:1.5;
 }
 .refi-side b{
-  font-size:12px;
+  display:block;
+  margin-bottom:3px;
+  color:#fff;
+  font-size:11px;
 }
 
-/* Credit check */
+/* ================= ONE CREDIT CHECK ================= */
 .credit{
-  padding:75px 0 35px;
+  padding-block:38px 24px;
+  background:var(--cream);
 }
 .credit-box{
-  padding:48px 52px;
-  gap:55px;
+  padding:38px 42px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:var(--paper);
 }
 .credit h2{
-  font-size:clamp(42px,4.8vw,62px);
-  line-height:.94;
+  max-width:760px;
+  margin:0;
+  font-size:clamp(40px,5.1vw,60px);
 }
 .credit p{
-  font-size:13px;
-  line-height:1.6;
+  max-width:700px;
+  margin:15px 0 0;
+  color:var(--muted);
+  font-size:12px;
 }
+.credit-action{text-align:right}
 .credit-action-label{
+  display:block;
+  margin-bottom:8px;
+  color:var(--burgundy);
   font-size:9px;
-}
-.credit-action .btn{
-  min-width:170px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
-/* Upload */
+/* ================= UPLOAD ================= */
 .upload{
-  padding:60px 0 35px;
+  display:none;
+  padding-block:45px 70px;
+  background:var(--cream);
 }
+.upload.visible{display:block}
 .upload-grid{
-  gap:75px;
+  display:grid;
+  grid-template-columns:1fr .85fr;
+  gap:70px;
+  align-items:center;
 }
 .upload h2{
-  font-size:clamp(48px,5vw,70px);
-  line-height:.93;
+  max-width:650px;
+  margin:0;
+  font-size:clamp(46px,5.7vw,68px);
 }
 .upload-intro{
-  font-size:14px;
-  line-height:1.65;
+  max-width:620px;
+  margin:19px 0 0;
+  color:var(--muted);
+  font-size:13px;
 }
 .upload-box{
-  padding:38px;
+  padding:32px;
+  border:1px dashed rgba(118,11,34,.35);
+  border-radius:7px;
+  background:var(--paper);
 }
 .upload-box h3{
-  font-size:34px;
+  margin:0;
+  font-size:31px;
 }
-.upload-box p{
+.upload-box>p{
+  margin:10px 0 0;
+  color:var(--muted);
   font-size:11px;
-  line-height:1.55;
 }
+.file-input{display:none}
 .choose{
   min-height:44px;
-  padding:0 20px;
+  margin-top:20px;
+  padding:0 18px;
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  background:var(--burgundy);
+  color:#fff;
   font-size:11px;
+  font-weight:800;
+  cursor:pointer;
 }
 .file-name{
+  min-height:17px;
+  margin-top:10px;
+  color:var(--muted);
   font-size:10px;
 }
 .preview{
-  max-width:230px;
-  max-height:230px;
+  display:none;
+  max-width:220px;
+  max-height:220px;
+  margin-top:16px;
+  object-fit:contain;
+  border:1px solid var(--line);
+  border-radius:5px;
 }
+.preview.visible{display:block}
 .continue{
-  min-height:48px;
+  width:100%;
+  margin-top:16px;
+  border:0;
+  background:#bbb5b1;
+  color:#fff;
+  opacity:.55;
+  pointer-events:none;
+}
+.continue.ready{
+  background:var(--orange);
+  opacity:1;
+  pointer-events:auto;
 }
 .upload-disclaimer{
+  color:#8b8380!important;
   font-size:9px!important;
 }
 
-/* Next step */
+/* ================= NEXT STEP ================= */
 .next-step{
-  margin-top:35px;
-  padding:65px 40px;
+  display:none;
+  margin-top:28px;
+  padding:54px 30px;
+  border-radius:7px;
+  text-align:center;
+  color:#fff;
+  background:var(--burgundy);
 }
+.next-step.visible{display:block}
+.next-step .kicker{color:var(--orange-soft)}
 .next-step h2{
-  font-size:clamp(46px,5vw,68px);
-  line-height:.93;
+  max-width:800px;
+  margin:0 auto;
+  font-size:clamp(44px,5.5vw,66px);
 }
 .next-step p{
-  font-size:13px;
-  line-height:1.6;
-  max-width:680px;
-}
-.next-step .btn{
-  min-width:190px;
-}
-
-/* Testimonials */
-.testimonials{
-  padding:90px 0;
-}
-.test-head h2{
-  font-size:clamp(42px,5vw,60px);
-}
-.test-grid{
-  margin-top:42px;
-  gap:8px;
-}
-.person{
-  width:155px;
-  height:215px;
-}
-.person.active{
-  width:180px;
-  height:255px;
-}
-.person span{
-  font-size:10px;
-}
-
-/* Terms */
-.terms{
-  padding:90px 0;
-}
-.terms-grid{
-  gap:85px;
-}
-.terms h2{
-  font-size:clamp(44px,4.8vw,62px);
-  line-height:.94;
-}
-.terms-grid > div:first-child p{
-  font-size:12px!important;
-  line-height:1.6;
-}
-.rate-row{
-  padding:15px 18px;
-  font-size:11px;
-}
-.rate-note{
-  font-size:9px;
-  line-height:1.5;
-}
-
-/* FAQ */
-.faq{
-  padding:75px 0 100px;
-}
-.faq-grid{
-  gap:80px;
-}
-.faq h2{
-  font-size:clamp(44px,4.8vw,62px);
-  line-height:.94;
-}
-details{
-  padding:18px 0;
-}
-summary{
+  max-width:670px;
+  margin:17px auto 23px;
+  color:rgba(255,255,255,.72);
   font-size:12px;
 }
-details p{
+.next-step .btn{background:#fff;color:var(--burgundy)}
+.next-note{
+  margin-top:10px!important;
+  color:rgba(255,255,255,.45)!important;
+  font-size:9px!important;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  padding-block:78px;
+  background:var(--cream);
+}
+.test-head{text-align:center}
+.test-head h2{
+  margin:0;
+  font-size:clamp(40px,5vw,57px);
+}
+.test-grid{
+  min-height:245px;
+  margin-top:35px;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  gap:7px;
+}
+.person{
+  width:145px;
+  height:195px;
+  position:relative;
+  border-radius:5px;
+  background-position:center;
+  background-size:cover;
+  opacity:.58;
+}
+.person.active{
+  width:165px;
+  height:225px;
+  opacity:1;
+}
+.person span{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  text-shadow:0 1px 5px #000;
+}
+
+/* ================= TERMS ================= */
+.terms{
+  padding-block:76px;
+  background:var(--cream);
+}
+.terms-grid{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:75px;
+}
+.terms h2{
+  margin:0;
+  font-size:clamp(42px,5vw,59px);
+}
+.terms-intro{
+  margin-top:15px;
+  color:var(--muted);
   font-size:11px;
-  line-height:1.6;
 }
-
-/* Final */
-.final-inner{
-  min-height:440px;
+.rate-table{border-top:1px solid var(--line)}
+.rate-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  padding:13px 15px;
+  border-bottom:1px solid var(--line);
+  font-size:11px;
 }
-.final-copy{
-  max-width:560px;
-}
-.final h2{
-  font-size:clamp(50px,5vw,72px);
-  line-height:.93;
-}
-.final p{
-  font-size:13px;
-  line-height:1.6;
-}
-.final-image{
-  width:58%;
-}
-
-/* Footer */
-footer{
-  padding:48px 0 25px;
-}
-.footer-brand p{
+.rate-row:nth-child(even){background:#ebe2d7}
+.rate-note{
+  margin-top:11px;
+  color:var(--muted);
   font-size:9px;
-  line-height:1.5;
 }
-.footer-links{
+
+/* ================= FAQ ================= */
+.faq{
+  padding-block:50px 85px;
+  background:var(--cream);
+}
+.faq-grid{
+  display:grid;
+  grid-template-columns:.65fr 1.35fr;
   gap:70px;
 }
-.footer-col strong{
-  font-size:10px;
+.faq h2{
+  margin:0;
+  font-size:clamp(42px,5vw,59px);
 }
-.footer-col a{
+.faq-list{border-top:1px solid var(--line)}
+details{
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+summary{
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800;
+}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+"}
+details[open] summary:after{content:"−"}
+details p{
+  max-width:720px;
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* ================= FINAL CTA ================= */
+.final{
+  background:var(--black);
+  color:#fff;
+}
+.final-inner{
+  min-height:430px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.final-copy{
+  position:relative;
+  z-index:3;
+  max-width:570px;
+  padding-block:70px;
+}
+.final .kicker{color:var(--orange-soft)}
+.final h2{
+  margin:0;
+  font-size:clamp(47px,6vw,70px);
+}
+.final p{
+  max-width:570px;
+  margin:17px 0 22px;
+  color:rgba(255,255,255,.7);
+  font-size:12px;
+}
+.final-image{
+  position:absolute;
+  inset:0 0 0 auto;
+  width:57%;
+  background:url("YOUR_FINAL_CTA_IMAGE_URL") center/cover no-repeat;
+}
+.final-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,var(--black) 0%,rgba(21,18,19,.8) 17%,transparent 65%);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding-block:38px 22px;
+  color:#fff;
+  background:var(--black);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+.footer-brand{max-width:430px}
+.footer-brand p{
+  margin-top:11px;
+  color:rgba(255,255,255,.43);
   font-size:9px;
-  margin-top:9px;
+}
+.footer-links{
+  display:flex;
+  gap:65px;
+}
+.footer-col strong{font-size:10px}
+.footer-col a{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.45);
+  font-size:9px;
 }
 .footer-bottom{
+  margin-top:30px;
+  padding-top:14px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.34);
   font-size:8px;
 }
 
 /* =========================================================
-   MOBILE — deliberate single-column editorial layout
+   TABLET
    ========================================================= */
-@media(max-width:850px){
-  .container{
-    width:min(calc(100% - 40px),720px);
-  }
+@media (max-width:900px){
+  .hero-copy{width:63%}
+  .hero-product-visual{width:48%;right:-12%}
 
-  .section{
-    padding:78px 0;
-  }
+  .vehicle-inner{grid-template-columns:1fr 1fr}
+  .vehicle-copy{padding-right:35px}
 
-  .hero,
-  .hero-inner{
-    min-height:760px;
-  }
-
-  .hero-copy{
-    width:67%;
-    padding-top:55px;
-  }
-
-  .hero-product-visual{
-    width:52%;
-    height:420px;
-    right:-8%;
-  }
-
-  .steps-grid,
-  .get-grid{
-    grid-template-columns:1fr;
-  }
-
-  .step{
-    min-height:330px;
-  }
-
-  .vehicle-inner{
-    grid-template-columns:1fr;
-  }
-
-  .vehicle-copy{
-    padding:72px 0 60px;
-  }
-
-  .vehicle-image{
-    min-height:390px;
-  }
-
-  .title-grid,
-  .terms-grid,
-  .faq-grid,
-  .upload-grid{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
-
-  .title-image{
-    min-height:360px;
-    order:2;
-  }
-
-  .title-copy{
-    order:1;
-  }
-
-  .credit-box{
-    grid-template-columns:1fr;
-  }
-
-  .credit-action{
-    text-align:left;
-  }
-
-  .refi-box{
-    grid-template-columns:1fr;
-  }
-
-  .refi-side{
-    border-left:0;
-    border-top:1px solid rgba(255,255,255,.2);
-    padding:24px 0 0;
-  }
-
-  .final-inner{
-    min-height:500px;
-  }
-
-  .final-copy{
-    max-width:480px;
-  }
-
-  .final-image{
-    width:72%;
-    opacity:.5;
-  }
+  .title-grid{gap:45px}
+  .upload-grid{gap:40px}
+  .terms-grid,.faq-grid{gap:45px}
 }
 
-@media(max-width:620px){
-  .container{
-    width:calc(100% - 28px);
-  }
+/* =========================================================
+   MOBILE — deliberately redesigned, NOT just scaled down
+   ========================================================= */
+@media (max-width:640px){
 
-  .section{
-    padding:64px 0;
-  }
+  body{font-size:16px}
+  .container{width:calc(100% - 36px)}
+  .section{padding-block:62px}
 
-  .kicker{
-    font-size:9px;
-    letter-spacing:.14em;
-    margin-bottom:14px;
-  }
+  /* Header */
+  .nav{min-height:62px}
+  .logo{font-size:10px}
+  .logo-mark{width:18px;height:18px}
+  .nav-links{gap:8px;font-size:9px}
+  .nav-links a:not(.nav-check){display:none}
+  .nav-check{padding:8px 10px}
 
-  /* Mobile header */
-  .nav{
-    height:62px;
-  }
-  .logo{
-    font-size:11px;
-  }
-  .nav-links{
-    gap:8px;
-    font-size:8px;
-  }
-  .nav-links a:not(.nav-check){
-    display:none;
-  }
-  .nav-check{
-    padding:7px 10px;
-  }
-
-  /* Mobile hero */
-  .hero,
-  .hero-inner{
-    min-height:690px;
+  /* Hero */
+  .hero{
+    min-height:720px;
+    background:
+      linear-gradient(180deg,rgba(75,5,20,.97) 0%,rgba(112,8,30,.92) 60%,rgba(112,8,30,.78) 100%),
+      url("YOUR_HERO_BACKGROUND_IMAGE_URL") center/cover no-repeat;
   }
   .hero-inner{
-    align-items:flex-start;
-    padding-top:108px;
+    min-height:720px;
+    display:block;
+    padding-top:116px;
   }
   .hero-copy{
     width:100%;
-    padding-top:0;
+    padding:0;
   }
   .hero h1{
-    font-size:54px;
-    line-height:.91;
-    max-width:420px;
+    max-width:100%;
+    font-size:55px;
   }
   .hero-sub{
-    font-size:19px;
-    max-width:360px;
+    max-width:330px;
     margin-top:17px;
+    font-size:18px;
   }
   .hero-text{
-    font-size:11px;
-    line-height:1.55;
-    max-width:360px;
+    max-width:340px;
+    margin-top:14px;
+    font-size:12px;
+    line-height:1.48;
   }
   .hero-points{
-    font-size:10px;
+    max-width:345px;
+    margin-top:15px;
     gap:6px;
-    max-width:365px;
-  }
-  .hero-actions{
-    margin-top:21px;
-  }
-  .btn{
-    min-height:44px;
-    padding:0 18px;
-    font-size:10px;
-  }
-  .hero-note{
-    font-size:7px;
-    max-width:320px;
-  }
-  .hero-product-visual{
-    width:75%;
-    height:300px;
-    right:-16%;
-    bottom:-20px;
-    top:auto;
-    transform:none;
-    opacity:.78;
-  }
-
-  /* Stats become clean 2x2 */
-  .stats-grid{
-    grid-template-columns:1fr 1fr;
-  }
-  .stat{
-    min-height:94px;
-    padding:18px 15px;
-  }
-  .stat strong{
-    font-size:21px;
-  }
-  .stat span{
-    font-size:8px;
+    font-size:11px;
     line-height:1.35;
   }
-
-  /* Section headings */
-  .section-head h2,
-  .steps-head h2{
-    font-size:44px;
-    line-height:.95;
+  .hero-actions{margin-top:20px}
+  .hero-note{font-size:8px}
+  .hero-product-visual{
+    top:auto;
+    right:-10%;
+    bottom:-15px;
+    width:72%;
+    height:285px;
+    transform:none;
+    opacity:.92;
   }
-  .section-head p,
+
+  /* Stats become readable 2 x 2 */
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat{
+    min-height:95px;
+    padding:18px 16px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat:nth-child(2n){border-right:0}
+  .stat:nth-last-child(-n+2){border-bottom:0}
+  .stat strong{font-size:22px}
+  .stat span{font-size:9px;line-height:1.3}
+
+  /* Steps: one card per row, large enough to read */
+  .steps{padding-block:67px}
+  .steps-head{text-align:left}
+  .steps-head .kicker{margin-bottom:12px}
+  .steps-head h2{font-size:48px}
   .steps-head p{
-    font-size:11px;
-    line-height:1.55;
-  }
-
-  /* Steps */
-  .steps-grid{
-    margin-top:30px;
-    gap:6px;
-  }
-  .step{
-    min-height:275px;
-    padding:22px;
-  }
-  .step h3{
-    font-size:29px;
-    margin-top:25px;
-  }
-  .step p{
-    font-size:10px;
+    margin-top:16px;
+    font-size:12px;
     line-height:1.5;
   }
+  .steps-grid{
+    margin-top:29px;
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+  .step{
+    min-height:270px;
+    padding:23px;
+  }
+  .step h3{
+    max-width:310px;
+    margin-top:22px;
+    font-size:31px;
+  }
+  .step p{
+    max-width:310px;
+    font-size:11px;
+  }
   .step-art{
-    height:75px;
-    margin-top:14px;
+    height:78px;
+    margin-top:15px;
   }
 
-  /* Vehicle */
+  /* Vehicle image moves BELOW copy */
+  .vehicle-inner{
+    display:flex;
+    flex-direction:column;
+  }
   .vehicle-copy{
-    padding:60px 0 50px;
+    padding:62px 0 48px;
   }
-  .vehicle h2{
-    font-size:45px;
+  .vehicle h2{font-size:49px}
+  .vehicle-copy>p{
+    font-size:12px;
+    line-height:1.52;
   }
-  .vehicle-copy p{
-    font-size:11px;
-    line-height:1.55;
+  .vehicle-points{
+    margin-top:20px;
+    gap:10px;
   }
   .vehicle-point{
     font-size:10px;
+    grid-template-columns:28px 1fr;
   }
   .vehicle-image{
-    min-height:285px;
+    min-height:275px;
+    width:100%;
   }
 
   /* Title */
   .title-grid{
-    gap:30px;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+    align-items:stretch;
   }
-  .title-copy h2{
-    font-size:45px;
-  }
-  .title-copy p{
-    font-size:11px;
-  }
-  .title-list li{
-    font-size:10px;
-  }
-  .title-image{
-    min-height:275px;
-  }
+  .title-copy{order:1}
+  .title-image{order:2;min-height:260px}
+  .title-copy h2{font-size:49px}
+  .title-copy>p{font-size:12px}
+  .title-list{gap:9px}
+  .title-list li{font-size:10px}
 
   /* Need */
   .need-grid{
+    grid-template-columns:1fr;
     margin-top:30px;
+    gap:7px;
   }
   .need-card{
-    min-height:0;
-    padding:28px 25px;
+    min-height:auto;
+    padding:27px 25px;
   }
-  .need-card h3{
-    font-size:31px;
-  }
-  .need-card p{
-    font-size:10px;
-  }
-  .need-list li{
-    font-size:9px;
-  }
+  .need-card h3{font-size:33px}
+  .need-card p{font-size:11px}
+  .need-list li{font-size:10px}
 
   /* Get */
+  .get{padding-block:67px}
   .get-grid{
+    grid-template-columns:1fr;
+    gap:6px;
     margin-top:30px;
   }
   .get-card{
-    min-height:165px;
+    min-height:145px;
     padding:23px;
   }
   .get-card h3{
-    font-size:27px;
     margin-top:20px;
+    font-size:27px;
   }
-  .get-card p{
-    font-size:10px;
-  }
+  .get-card p{font-size:10px}
 
   /* Refinance */
-  .refi{
-    padding:45px 0;
-  }
+  .refi{padding-block:35px}
   .refi-box{
-    padding:30px 24px;
-    gap:25px;
+    display:block;
+    padding:29px 25px;
   }
-  .refi-box h2{
-    font-size:38px;
+  .refi-box h2{font-size:41px}
+  .refi-box p{font-size:11px}
+  .refi-side{
+    margin-top:25px;
+    padding:20px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.2);
+    gap:13px;
   }
-  .refi-box p{
-    font-size:10px;
-  }
-  .refi-side div{
-    font-size:9px;
-  }
+  .refi-side div{font-size:10px}
 
-  /* Credit check */
-  .credit{
-    padding:50px 0 20px;
-  }
+  /* ONE credit check block */
+  .credit{padding-block:32px 18px}
   .credit-box{
-    padding:28px 23px;
-    gap:25px;
+    display:block;
+    padding:27px 23px;
   }
-  .credit h2{
-    font-size:39px;
+  .credit h2{font-size:43px}
+  .credit p{font-size:11px;line-height:1.5}
+  .credit-action{
+    margin-top:21px;
+    text-align:left;
   }
-  .credit p{
-    font-size:10px;
-  }
-  .credit-action .btn{
-    min-width:155px;
-  }
+  .credit-action .btn{width:100%}
 
   /* Upload */
-  .upload{
-    padding:45px 0 20px;
-  }
+  .upload{padding-block:35px 60px}
   .upload-grid{
-    gap:28px;
+    display:block;
   }
-  .upload h2{
-    font-size:45px;
-  }
-  .upload-intro{
-    font-size:11px;
-  }
+  .upload h2{font-size:48px}
+  .upload-intro{font-size:11px}
   .upload-box{
+    margin-top:27px;
     padding:25px 21px;
   }
-  .upload-box h3{
-    font-size:29px;
-  }
-  .upload-box p{
-    font-size:9px;
+  .upload-box h3{font-size:29px}
+  .upload-box>p{font-size:10px}
+  .choose{
+    width:100%;
+    justify-content:center;
   }
   .preview{
-    max-width:180px;
-    max-height:180px;
+    max-width:100%;
+    max-height:230px;
+    margin-inline:auto;
   }
-
-  /* Next step */
   .next-step{
-    margin-top:25px;
-    padding:42px 22px;
+    margin-top:22px;
+    padding:39px 20px;
   }
-  .next-step h2{
-    font-size:42px;
-  }
-  .next-step p{
-    font-size:10px;
-  }
+  .next-step h2{font-size:45px}
+  .next-step p{font-size:10px}
 
-  /* Testimonials */
-  .testimonials{
-    padding:65px 0;
-  }
-  .test-head h2{
-    font-size:40px;
-  }
+  /* Testimonials: horizontal strip rather than microscopic row */
+  .testimonials{padding-block:65px}
+  .test-head{text-align:left}
+  .test-head h2{font-size:43px}
   .test-grid{
+    min-height:190px;
+    margin-top:25px;
     justify-content:flex-start;
-    margin-left:-28px;
-    margin-right:-28px;
-    padding:0 28px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-bottom:5px;
+    scrollbar-width:none;
   }
+  .test-grid::-webkit-scrollbar{display:none}
   .person{
-    flex:0 0 110px;
-    width:110px;
-    height:165px;
+    flex:0 0 112px;
+    width:112px;
+    height:160px;
   }
   .person.active{
-    flex:0 0 125px;
+    flex-basis:125px;
     width:125px;
-    height:190px;
+    height:180px;
   }
 
   /* Terms */
-  .terms{
-    padding:65px 0;
+  .terms{padding-block:62px}
+  .terms-grid{
+    display:block;
   }
-  .terms h2{
-    font-size:40px;
-  }
-  .terms-grid > div:first-child p{
-    font-size:10px!important;
-  }
+  .terms h2{font-size:45px}
+  .terms-intro{font-size:10px}
+  .rate-table{margin-top:30px}
   .rate-row{
-    grid-template-columns:1fr 1fr;
-    padding:12px 10px;
-    font-size:9px;
-  }
-
-  /* FAQ */
-  .faq{
-    padding:55px 0 70px;
-  }
-  .faq-grid{
-    gap:28px;
-  }
-  .faq h2{
-    font-size:40px;
-  }
-  details{
-    padding:14px 0;
-  }
-  summary{
-    font-size:9px;
-  }
-  details p{
-    font-size:9px;
-  }
-
-  /* Final CTA */
-  .final-inner{
-    min-height:500px;
-  }
-  .final-copy{
-    max-width:330px;
-  }
-  .final h2{
-    font-size:47px;
-  }
-  .final p{
+    grid-template-columns:1fr;
+    gap:4px;
+    padding:12px;
     font-size:10px;
   }
+  .rate-row span:last-child{color:var(--muted)}
+
+  /* FAQ */
+  .faq{padding-block:45px 65px}
+  .faq-grid{display:block}
+  .faq h2{font-size:45px;margin-bottom:28px}
+  details{padding:14px 0}
+  summary{font-size:10px;line-height:1.35}
+  details p{font-size:10px}
+
+  /* Final */
+  .final-inner{
+    min-height:510px;
+    display:block;
+  }
+  .final-copy{
+    max-width:100%;
+    padding-block:64px 50px;
+  }
+  .final h2{font-size:51px}
+  .final p{font-size:11px}
   .final-image{
-    width:95%;
-    right:-35%;
-    opacity:.35;
+    top:auto;
+    bottom:0;
+    width:100%;
+    height:220px;
+    opacity:.72;
+  }
+  .final-image:after{
+    background:linear-gradient(180deg,var(--black) 0%,rgba(21,18,19,.45) 45%,transparent 100%);
   }
 
   /* Footer */
-  footer{
-    padding:35px 0 18px;
-  }
+  footer{padding-block:30px 18px}
   .footer-top{
-    gap:30px;
+    display:block;
   }
+  .footer-brand p{font-size:8px}
   .footer-links{
-    gap:35px;
+    margin-top:27px;
+    gap:45px;
   }
-  .footer-brand p{
-    font-size:8px;
-  }
-  .footer-col strong{
-    font-size:9px;
-  }
-  .footer-col a{
-    font-size:8px;
-  }
+  .footer-col strong{font-size:9px}
+  .footer-col a{font-size:8px}
   .footer-bottom{
-    gap:8px;
+    margin-top:25px;
+    display:block;
     font-size:7px;
   }
+  .footer-bottom span{display:block}
+  .footer-bottom span+span{margin-top:7px}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  .container{width:calc(100% - 30px)}
+  .hero h1{font-size:50px}
+  .hero{min-height:700px}
+  .hero-inner{min-height:700px}
+  .hero-product-visual{height:255px}
+  .steps-head h2,
+  .vehicle h2,
+  .title-copy h2,
+  .upload h2{font-size:45px}
+  .credit h2{font-size:40px}
+  .next-step h2{font-size:41px}
+}
+
+
+/* =========================================================
+   FINAL POLISH OVERRIDES — ORIGINAL LAYOUT PRESERVED
+   Orange-led Yendo-inspired palette + stronger mobile UX.
+   ========================================================= */
+:root{
+  --burgundy:#111111;
+  --burgundy-dark:#090909;
+  --orange:#f46f3f;
+  --orange-soft:#ff9a72;
+  --cream:#faf6ef;
+  --cream-deep:#eee6db;
+  --paper:#fffdf9;
+  --black:#111111;
+  --text:#181614;
+  --muted:#69615c;
+  --line:rgba(24,22,20,.14);
+}
+
+body{overflow-x:hidden; font-size:16px;}
+.container{width:min(calc(100% - (var(--gutter) * 2)),var(--max));}
+
+/* Header */
+.header{background:transparent; transition:background .25s ease, backdrop-filter .25s ease;}
+.header .nav{min-height:78px;}
+.nav-links{gap:27px; font-size:12px;}
+.nav-check{border-color:rgba(255,255,255,.78); background:rgba(244,111,63,.12);}
+
+/* Hero: orange is the brand color; dark is only used for contrast. */
+.hero{
+  background:
+    linear-gradient(100deg,rgba(25,20,17,.96) 0%,rgba(82,40,25,.82) 48%,rgba(244,111,63,.55) 100%),
+    url("YOUR_HERO_BACKGROUND_IMAGE_URL") center/cover no-repeat;
+}
+.hero:after{background:radial-gradient(circle at 82% 47%,rgba(244,111,63,.40),transparent 29%);}
+.hero h1{font-size:clamp(60px,7vw,90px);}
+.hero-sub{font-size:23px;}
+.hero-text{font-size:14px;}
+.hero-points{font-size:13px;}
+.hero-note{font-size:10px;}
+.hero-product-visual{filter:drop-shadow(0 28px 38px rgba(15,10,6,.32));}
+
+/* Stats */
+.stat strong{font-size:27px;}
+.stat span{font-size:11px;}
+
+/* Product steps: orange family, not burgundy. */
+.step{background:var(--orange);}
+.step:nth-child(2){background:#e96537;}
+.step:nth-child(3){background:#d95d32;}
+.step p{font-size:12px;}
+.step h3{font-size:33px;}
+
+/* Dark lifestyle section stays dark for contrast. */
+.vehicle{background:#111;}
+.vehicle .kicker{color:var(--orange-soft);}
+.vehicle-copy>p{font-size:14px;}
+.vehicle-point{font-size:12px;}
+
+/* Light sections */
+.kicker{color:#df5d32;}
+.title-list li:before{color:var(--orange);}
+.need-card.dark{background:#111;}
+.need-list li:before{color:var(--orange);}
+.get{background:var(--cream-deep);}
+.get-icon{border-color:rgba(244,111,63,.38); color:#df5d32;}
+.get-card p{font-size:12px;}
+
+/* Refinance / custom journey */
+.refi-box{background:linear-gradient(105deg,#191614,#2a211d);}
+.credit{background:var(--cream);}
+.credit-box{background:var(--paper);}
+.credit-action-label{color:#df5d32;}
+.btn-orange{background:var(--orange); color:#fff;}
+
+/* IMPORTANT: the complete 3-step customer journey remains visible. */
+.upload{display:block; padding-block:55px 70px;}
+.next-step{display:block; background:#111;}
+.next-step .kicker{color:var(--orange-soft);}
+.next-step .btn{background:var(--orange); color:#fff;}
+.upload-box{border-color:rgba(244,111,63,.42);}
+.choose{background:var(--orange);}
+.continue.ready{background:var(--orange);}
+
+/* Make the custom flow read as three connected steps. */
+#creditCheckStep,
+#screenshotUploadSection,
+#nextStepSection{scroll-margin-top:90px;}
+#screenshotUploadSection{border-top:1px solid var(--line);}
+#nextStepSection{margin-top:30px;}
+
+/* Avoid awkward giant empty image areas when a placeholder is not supplied. */
+.hero-product-visual,
+.vehicle-image,
+.title-image,
+.final-image,
+.step-art,
+.person{background-repeat:no-repeat;}
+
+/* Final CTA */
+.final{background:#111;}
+.final .kicker{color:var(--orange-soft);}
+
+/* Footer */
+footer{background:#0c0c0c;}
+
+/* =========================================================
+   TABLET / MOBILE QUALITY PASS
+   ========================================================= */
+@media (max-width:900px){
+  :root{--gutter:clamp(20px,4.5vw,32px);}
+  .hero-copy{width:61%;}
+  .hero-product-visual{width:50%; right:-10%;}
+  .title-grid{gap:38px;}
+  .upload-grid{gap:35px;}
+}
+
+@media (max-width:640px){
+  .container{width:calc(100% - 32px);}
+  .header{position:absolute;}
+  .nav{min-height:64px !important;}
+  .nav-links{gap:7px;}
+  .nav-check{padding:9px 12px; font-size:10px;}
+
+  .hero{
+    min-height:700px;
+    background:
+      linear-gradient(180deg,rgba(18,15,13,.96) 0%,rgba(71,38,26,.88) 54%,rgba(244,111,63,.70) 100%),
+      url("YOUR_HERO_BACKGROUND_IMAGE_URL") center/cover no-repeat;
+  }
+  .hero-inner{min-height:700px; padding-top:108px;}
+  .hero h1{font-size:clamp(48px,14vw,60px); line-height:.94;}
+  .hero-sub{font-size:20px; line-height:1.08; max-width:350px;}
+  .hero-text{font-size:13px; line-height:1.52; max-width:350px;}
+  .hero-points{font-size:12px; line-height:1.42; max-width:350px;}
+  .hero-actions{margin-top:22px;}
+  .hero-actions .btn{width:100%; max-width:300px;}
+  .hero-note{font-size:9px; line-height:1.35; max-width:330px;}
+  .hero-product-visual{right:-14%; bottom:-18px; width:78%; height:275px; opacity:.96;}
+
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .stat{min-height:102px; padding:18px 14px;}
+  .stat strong{font-size:23px;}
+  .stat span{font-size:10px; line-height:1.35;}
+
+  .section{padding-block:64px;}
+  .steps{padding-block:64px;}
+  .steps-head h2{font-size:clamp(43px,12.5vw,52px); line-height:.95;}
+  .steps-head p{font-size:13px; line-height:1.5;}
+  .steps-grid{margin-top:28px; gap:8px;}
+  .step{min-height:292px; padding:25px 22px;}
+  .step h3{font-size:32px; line-height:.98; margin-top:22px;}
+  .step p{font-size:12px; line-height:1.48; max-width:340px;}
+  .step-art{height:82px; margin-top:17px;}
+
+  .vehicle-copy{padding:64px 0 48px;}
+  .vehicle h2{font-size:clamp(44px,12.5vw,52px);}
+  .vehicle-copy>p{font-size:13px; line-height:1.55;}
+  .vehicle-point{font-size:11.5px; line-height:1.45;}
+  .vehicle-image{min-height:285px;}
+
+  .title-copy h2{font-size:clamp(44px,12.5vw,52px);}
+  .title-copy>p{font-size:13px; line-height:1.55;}
+  .title-list li{font-size:11.5px; line-height:1.42;}
+  .title-image{min-height:270px;}
+
+  .section-head h2{font-size:clamp(43px,12.5vw,52px);}
+  .section-head p{font-size:13px; line-height:1.5;}
+  .need-card{padding:29px 24px;}
+  .need-card h3{font-size:34px;}
+  .need-card p{font-size:12px; line-height:1.5;}
+  .need-list li{font-size:11.5px;}
+
+  .get-card{min-height:155px; padding:24px;}
+  .get-card h3{font-size:29px;}
+  .get-card p{font-size:11.5px; line-height:1.48;}
+
+  .refi-box{padding:30px 24px;}
+  .refi-box h2{font-size:clamp(39px,11.5vw,47px);}
+  .refi-box p{font-size:12px; line-height:1.5;}
+  .refi-side div{font-size:11px; line-height:1.45;}
+
+  .credit{padding-block:34px 22px;}
+  .credit-box{padding:28px 23px;}
+  .credit h2{font-size:clamp(40px,11.5vw,48px);}
+  .credit p{font-size:12px; line-height:1.52;}
+  .credit-action .btn{width:100%; min-height:50px; font-size:13px;}
+
+  .upload{padding-block:38px 58px;}
+  .upload-grid{display:block;}
+  .upload h2{font-size:clamp(44px,12.5vw,53px);}
+  .upload-intro{font-size:12px; line-height:1.55;}
+  .upload-box{margin-top:28px; padding:26px 20px;}
+  .upload-box h3{font-size:30px;}
+  .upload-box>p{font-size:11px; line-height:1.5;}
+  .choose{width:100%; justify-content:center; min-height:48px; font-size:12px;}
+  .file-name{font-size:10px; word-break:break-word;}
+  .preview{width:100%; max-width:100%; max-height:270px; object-fit:contain; margin-inline:auto;}
+  .continue{min-height:50px; font-size:13px;}
+  .upload-disclaimer{font-size:9px !important; line-height:1.4 !important;}
+  .next-step{margin-top:24px; padding:42px 20px;}
+  .next-step h2{font-size:clamp(41px,11.5vw,50px); line-height:.97;}
+  .next-step p{font-size:11.5px; line-height:1.5;}
+  .next-step .btn{width:100%; min-height:50px;}
+
+  .testimonials{padding-block:64px;}
+  .test-head h2{font-size:clamp(40px,11.5vw,48px);}
+  .person{flex-basis:118px; width:118px; height:165px;}
+  .person.active{flex-basis:130px; width:130px; height:185px;}
+
+  .terms{padding-block:64px;}
+  .terms h2{font-size:clamp(41px,11.5vw,49px);}
+  .terms-intro{font-size:11px; line-height:1.5;}
+  .rate-row{font-size:11px; line-height:1.35; padding:13px 12px;}
+  .rate-note{font-size:9px; line-height:1.45;}
+
+  .faq{padding-block:48px 68px;}
+  .faq h2{font-size:clamp(41px,11.5vw,49px);}
+  summary{font-size:11px; line-height:1.4;}
+  details p{font-size:11px; line-height:1.5;}
+
+  .final-inner{min-height:530px;}
+  .final-copy{padding-block:66px 48px;}
+  .final h2{font-size:clamp(46px,12.5vw,55px);}
+  .final p{font-size:12px; line-height:1.52;}
+  .final .btn{min-height:50px;}
+  .final-image{height:225px; width:100%;}
+
+  footer{padding-block:32px 20px;}
+  .footer-brand p{font-size:9px; line-height:1.45;}
+  .footer-links{gap:42px;}
+  .footer-col strong{font-size:10px;}
+  .footer-col a{font-size:9px; margin-top:9px;}
+  .footer-bottom{font-size:8px; line-height:1.45;}
+}
+
+@media (max-width:380px){
+  .container{width:calc(100% - 28px);}
+  .hero{min-height:680px;}
+  .hero-inner{min-height:680px;}
+  .hero-product-visual{height:250px;}
+  .hero h1{font-size:48px;}
+  .step{padding:22px 19px;}
+  .steps-head h2,.vehicle h2,.title-copy h2,.upload h2{font-size:44px;}
+  .credit h2,.next-step h2{font-size:40px;}
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*:before,*:after{transition:none !important; animation:none !important;}
 }
 
 </style>
 </head>
 
 <body>
-<!--
-  IMPORTANT:
-  This is an independent affiliate/informational landing page.
-  It is designed to use the same general visual language as the supplied reference,
-  but it should NOT claim to be the official Yendo website or use Yendo's logo as if official.
-
-  REPLACE URLS in the URL CONFIG below.
--->
 
 <header class="header" id="siteHeader">
   <div class="container nav">
@@ -1277,11 +1539,13 @@ footer{
 
 <main id="top">
 
-<!-- HERO -->
+<!-- =====================================================
+     01 HERO — PRODUCT FIRST
+     ===================================================== -->
 <section class="hero" id="heroSection">
   <div class="container hero-inner">
     <div class="hero-copy">
-      <div class="kicker" style="color:#ff9b7a" id="heroKicker">Vehicle-backed credit</div>
+      <div class="kicker" style="color:#ff9271" id="heroKicker">Vehicle-backed credit</div>
       <h1 id="heroTitle">The Auto Card</h1>
       <div class="hero-sub" id="heroSubtitle">The first credit card powered by your vehicle.</div>
       <p class="hero-text" id="heroDescription">
@@ -1302,17 +1566,29 @@ footer{
   </div>
 </section>
 
-<!-- PRODUCT HIGHLIGHTS -->
+<!-- 02 PRODUCT DATA -->
 <section class="stats" id="productOverview">
   <div class="container stats-grid">
-    <div class="stat" id="stat1"><strong id="stat1Value">Up to $10,000</strong><span id="stat1Label">Potential credit limit</span></div>
-    <div class="stat" id="stat2"><strong id="stat2Value">1 minute</strong><span id="stat2Label">Potential pre-approval decision</span></div>
-    <div class="stat" id="stat3"><strong id="stat3Value">2 minutes</strong><span id="stat3Label">Potential access after approval</span></div>
-    <div class="stat" id="stat4"><strong id="stat4Value">1.5%</strong><span id="stat4Label">Unlimited cashback on eligible purchases when conditions apply</span></div>
+    <div class="stat" id="stat1">
+      <strong id="stat1Value">Up to $10,000</strong>
+      <span id="stat1Label">Potential credit limit</span>
+    </div>
+    <div class="stat" id="stat2">
+      <strong id="stat2Value">1 minute</strong>
+      <span id="stat2Label">Potential pre-approval decision</span>
+    </div>
+    <div class="stat" id="stat3">
+      <strong id="stat3Value">2 minutes</strong>
+      <span id="stat3Label">Potential access after approval</span>
+    </div>
+    <div class="stat" id="stat4">
+      <strong id="stat4Value">1.5%</strong>
+      <span id="stat4Label">Unlimited cashback on eligible purchases when conditions apply</span>
+    </div>
   </div>
 </section>
 
-<!-- OFFICIAL PRODUCT FLOW -->
+<!-- 03 OFFICIAL PRODUCT PROCESS -->
 <section class="section steps" id="howItWorks">
   <div class="container">
     <div class="steps-head">
@@ -1320,6 +1596,7 @@ footer{
       <h2 id="stepsTitle">In three simple steps.</h2>
       <p id="stepsIntro">Understand the product first. Then, if it fits your situation, continue through the provider's application process.</p>
     </div>
+
     <div class="steps-grid" id="stepsGrid">
       <article class="step" id="step1">
         <div class="step-no" id="step1Number">01</div>
@@ -1327,12 +1604,14 @@ footer{
         <p id="step1Text">Check whether you may qualify without the initial offer check necessarily impacting your credit score.</p>
         <div class="step-art step-art1" id="step1Image"></div>
       </article>
+
       <article class="step" id="step2">
         <div class="step-no" id="step2Number">02</div>
         <h3 id="step2Title">Verify yourself and your vehicle</h3>
         <p id="step2Text">The provider reviews identity, vehicle and financial information before a final decision.</p>
         <div class="step-art step-art2" id="step2Image"></div>
       </article>
+
       <article class="step" id="step3">
         <div class="step-no" id="step3Number">03</div>
         <h3 id="step3Title">Start spending</h3>
@@ -1343,27 +1622,34 @@ footer{
   </div>
 </section>
 
-<!-- VEHICLE CONCEPT -->
+<!-- 04 VEHICLE CONCEPT -->
 <section class="vehicle" id="vehicleCreditConcept">
   <div class="container vehicle-inner">
     <div class="vehicle-copy">
       <div class="kicker" id="vehicleKicker">How your vehicle becomes credit</div>
       <h2 id="vehicleTitle">Your vehicle can be more than transportation.</h2>
-      <p id="vehicleText">
-        Vehicle equity is the portion of your vehicle's value that you have already paid for.
-        The provider can consider that equity alongside income, expenses, vehicle details and credit history.
-      </p>
+      <p id="vehicleText">Vehicle equity is the portion of your vehicle's value that you have already paid for. The provider can consider that equity alongside income, expenses, vehicle details and credit history.</p>
+
       <div class="vehicle-points" id="vehiclePoints">
-        <div class="vehicle-point" id="vehiclePoint1"><span>01</span><div><b>Equity matters.</b> The value and equity in your vehicle can support qualification.</div></div>
-        <div class="vehicle-point" id="vehiclePoint2"><span>02</span><div><b>Your credit history isn't the only factor.</b> Multiple parts of your financial picture may be considered.</div></div>
-        <div class="vehicle-point" id="vehiclePoint3"><span>03</span><div><b>You keep driving.</b> A lien may be recorded on the title while you keep possession of the vehicle.</div></div>
+        <div class="vehicle-point" id="vehiclePoint1">
+          <span>01</span>
+          <div><b>Equity matters.</b> The value and equity in your vehicle can support qualification.</div>
+        </div>
+        <div class="vehicle-point" id="vehiclePoint2">
+          <span>02</span>
+          <div><b>Your credit history isn't the only factor.</b> Multiple parts of your financial picture may be considered.</div>
+        </div>
+        <div class="vehicle-point" id="vehiclePoint3">
+          <span>03</span>
+          <div><b>You keep driving.</b> A lien may be recorded on the title while you keep possession of the vehicle.</div>
+        </div>
       </div>
     </div>
     <div class="vehicle-image" id="vehicleLifestyleImageURL" aria-label="Vehicle lifestyle image"></div>
   </div>
 </section>
 
-<!-- TITLE -->
+<!-- 05 TITLE -->
 <section class="section title-section" id="titleSection">
   <div class="container title-grid">
     <div class="title-copy">
@@ -1377,11 +1663,11 @@ footer{
         <li id="titleList4">The lien can be released after the account is settled under the applicable terms.</li>
       </ul>
     </div>
-    <div class="title-image" id="titleImageURL"></div>
+    <div class="title-image" id="titleImageURL" aria-label="Vehicle title image"></div>
   </div>
 </section>
 
-<!-- WHAT YOU NEED -->
+<!-- 06 REQUIREMENTS -->
 <section class="section need" id="whatYouNeed">
   <div class="container">
     <div class="section-head">
@@ -1389,26 +1675,32 @@ footer{
       <h2 id="needHeading">Know what matters before you continue.</h2>
       <p id="needIntro">Eligibility is determined by the provider. These are the main areas to understand before applying.</p>
     </div>
+
     <div class="need-grid" id="needGrid">
       <article class="need-card" id="needCard1">
         <h3 id="needCard1Title">Vehicle</h3>
         <p id="needCard1Text">A safe, working vehicle and a vehicle title in your name are part of the process.</p>
         <ul class="need-list" id="needCard1List">
-          <li id="need1a">Vehicle details</li><li id="need1b">Title information</li><li id="need1c">Vehicle value/equity</li>
+          <li id="need1a">Vehicle details</li>
+          <li id="need1b">Title information</li>
+          <li id="need1c">Vehicle value/equity</li>
         </ul>
       </article>
+
       <article class="need-card dark" id="needCard2">
         <h3 id="needCard2Title">You</h3>
         <p id="needCard2Text">The provider may consider your identity, income and ability to repay alongside credit history.</p>
         <ul class="need-list" id="needCard2List">
-          <li id="need2a">Government-issued ID</li><li id="need2b">Income information</li><li id="need2c">Ability to repay</li>
+          <li id="need2a">Government-issued ID</li>
+          <li id="need2b">Income information</li>
+          <li id="need2c">Ability to repay</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
+<!-- 07 BENEFITS -->
 <section class="section get" id="whatYouGet">
   <div class="container">
     <div class="section-head">
@@ -1416,19 +1708,45 @@ footer{
       <h2 id="getHeading">Credit designed around the value in your vehicle.</h2>
       <p id="getIntro">This is a revolving credit product, giving you available credit rather than simply handing you a one-time cash loan.</p>
     </div>
+
     <div class="get-grid" id="getGrid">
-      <article class="get-card" id="getCard1"><div class="get-icon" id="getIcon1">01</div><h3 id="getTitle1">Revolving credit</h3><p id="getText1">Use available credit, make payments and potentially reuse available credit.</p></article>
-      <article class="get-card" id="getCard2"><div class="get-icon" id="getIcon2">02</div><h3 id="getTitle2">Virtual card</h3><p id="getText2">A virtual card may become available after approval so you can begin using your credit.</p></article>
-      <article class="get-card" id="getCard3"><div class="get-icon" id="getIcon3">03</div><h3 id="getTitle3">Cashback</h3><p id="getText3">Eligible purchases may earn cashback when the program conditions are met.</p></article>
-      <article class="get-card" id="getCard4"><div class="get-icon" id="getIcon4">04</div><h3 id="getTitle4">Credit reporting</h3><p id="getText4">Payment activity may be reported to major credit bureaus.</p></article>
-      <article class="get-card" id="getCard5"><div class="get-icon" id="getIcon5">05</div><h3 id="getTitle5">No deposit</h3><p id="getText5">The product is designed without requiring a traditional security deposit.</p></article>
-      <article class="get-card" id="getCard6"><div class="get-icon" id="getIcon6">06</div><h3 id="getTitle6">Potential limit increases</h3><p id="getText6">Eligible customers may receive automatic credit-limit increases according to provider criteria.</p></article>
+      <article class="get-card" id="getCard1">
+        <div class="get-icon" id="getIcon1">01</div>
+        <h3 id="getTitle1">Revolving credit</h3>
+        <p id="getText1">Use available credit, make payments and potentially reuse available credit.</p>
+      </article>
+      <article class="get-card" id="getCard2">
+        <div class="get-icon" id="getIcon2">02</div>
+        <h3 id="getTitle2">Virtual card</h3>
+        <p id="getText2">A virtual card may become available after approval so you can begin using your credit.</p>
+      </article>
+      <article class="get-card" id="getCard3">
+        <div class="get-icon" id="getIcon3">03</div>
+        <h3 id="getTitle3">Cashback</h3>
+        <p id="getText3">Eligible purchases may earn cashback when the program conditions are met.</p>
+      </article>
+      <article class="get-card" id="getCard4">
+        <div class="get-icon" id="getIcon4">04</div>
+        <h3 id="getTitle4">Credit reporting</h3>
+        <p id="getText4">Payment activity may be reported to major credit bureaus.</p>
+      </article>
+      <article class="get-card" id="getCard5">
+        <div class="get-icon" id="getIcon5">05</div>
+        <h3 id="getTitle5">No deposit</h3>
+        <p id="getText5">The product is designed without requiring a traditional security deposit.</p>
+      </article>
+      <article class="get-card" id="getCard6">
+        <div class="get-icon" id="getIcon6">06</div>
+        <h3 id="getTitle6">Potential limit increases</h3>
+        <p id="getText6">Eligible customers may receive automatic credit-limit increases according to provider criteria.</p>
+      </article>
     </div>
+
     <div class="get-note" id="getNote">All features are subject to eligibility, account terms and provider conditions.</div>
   </div>
 </section>
 
-<!-- REFINANCE -->
+<!-- 08 REFINANCE -->
 <section class="refi" id="refinanceSection">
   <div class="container">
     <div class="refi-box" id="refinanceBox">
@@ -1437,6 +1755,7 @@ footer{
         <h2 id="refiTitle">A current auto loan may still have a path forward.</h2>
         <p id="refiText">Depending on your situation, a refinance option may allow an auto-loan refinance and card application to be handled together. Availability depends on the provider.</p>
       </div>
+
       <div class="refi-side" id="refiSide">
         <div id="refiPoint1"><b>Vehicle-backed</b>Your vehicle remains central to the credit decision.</div>
         <div id="refiPoint2"><b>Flexible situation</b>Existing vehicle financing does not automatically mean you cannot continue.</div>
@@ -1446,7 +1765,7 @@ footer{
   </div>
 </section>
 
-<!-- ONE CREDIT CHECK ACTION -->
+<!-- 09 ONE CUSTOM CREDIT CHECK STEP -->
 <section class="credit" id="creditCheckStep">
   <div class="container">
     <div class="credit-box" id="creditCheckBox">
@@ -1455,6 +1774,7 @@ footer{
         <h2 id="creditHeading">Check your credit as one step in the journey.</h2>
         <p id="creditText">This is not the purpose of the page. It is simply a preparation step before you return here and continue toward the vehicle-backed credit product.</p>
       </div>
+
       <div class="credit-action" id="creditAction">
         <span class="credit-action-label" id="creditActionLabel">One action</span>
         <a href="YOUR_EXTERNAL_CREDIT_CHECK_URL" target="_blank" rel="noopener" class="btn btn-orange" id="creditCheckButton">Check Your Credit</a>
@@ -1463,45 +1783,55 @@ footer{
   </div>
 </section>
 
-<!-- UPLOAD: hidden until customer comes back -->
-<section class="upload" id="screenshotUploadSection" aria-labelledby="uploadHeading">
+<!-- 10 RETURN + SCREENSHOT -->
+<section class="upload visible" id="screenshotUploadSection" aria-labelledby="uploadHeading">
   <div class="container">
+
     <div class="upload-grid">
       <div>
         <div class="kicker" id="uploadKicker">Welcome back</div>
         <h2 id="uploadHeading">Continue where you left off.</h2>
         <p class="upload-intro" id="uploadIntro">After checking your credit on the external site, return here and attach the screenshot showing your name and credit score. This version only previews the image locally in your browser.</p>
       </div>
+
       <div class="upload-box" id="screenshotUploadBox">
         <h3 id="uploadBoxTitle">Attach your screenshot</h3>
         <p id="uploadBoxText">Only upload the relevant screenshot. Do not upload passwords, bank details, card numbers or other sensitive information.</p>
+
         <input class="file-input" type="file" id="creditScreenshotInput" accept="image/png,image/jpeg,image/webp">
+
         <label class="choose" for="creditScreenshotInput" id="chooseScreenshotButton">Choose Screenshot</label>
+
         <div class="file-name" id="selectedFileName">No file selected</div>
+
         <img class="preview" id="creditScreenshotPreview" alt="Credit score screenshot preview">
+
         <button type="button" class="btn continue" id="creditContinueButton" disabled>Continue</button>
+
         <p class="upload-disclaimer" id="uploadDisclaimer">No server upload is claimed by this front-end. Connect a secure backend later if you want to store the image.</p>
       </div>
     </div>
 
-    <!-- This is the key bridge: NO automatic redirect -->
-    <div class="next-step" id="nextStepSection" aria-live="polite">
+    <!-- 11 KEY BRIDGE: NEVER AUTO REDIRECT -->
+    <div class="next-step visible" id="nextStepSection" aria-live="polite">
       <div class="kicker" id="nextStepKicker">You're ready for the next step</div>
       <h2 id="nextStepHeading">Now explore your available vehicle-backed credit options.</h2>
       <p id="nextStepText">You've completed the credit-check step. The next step is to continue to the product provider, review your available offer and decide whether you want to apply.</p>
       <a href="YOUR_YENDO_AFFILIATE_LINK" target="_blank" rel="noopener" class="btn" id="nextStepAffiliateButton">See Your Options</a>
       <p class="next-note" id="nextStepNote">This button takes you to the product provider through our referral link.</p>
     </div>
+
   </div>
 </section>
 
-<!-- TESTIMONIAL / SOCIAL PROOF -->
+<!-- 12 SOCIAL PROOF -->
 <section class="testimonials" id="testimonials">
   <div class="container">
     <div class="test-head">
       <div class="kicker" id="testimonialKicker">From people who have used it</div>
       <h2 id="testimonialHeading">A product people use in real life.</h2>
     </div>
+
     <div class="test-grid" id="testimonialGrid">
       <div class="person" id="person1" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_1_URL')"><span id="person1Name">Customer</span></div>
       <div class="person" id="person2" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_2_URL')"><span id="person2Name">Customer</span></div>
@@ -1512,14 +1842,15 @@ footer{
   </div>
 </section>
 
-<!-- TERMS -->
+<!-- 13 TERMS -->
 <section class="terms" id="terms">
   <div class="container terms-grid">
     <div>
       <div class="kicker" id="termsKicker">Before you apply</div>
       <h2 id="termsHeading">Credit card rates, fees and terms.</h2>
-      <p id="termsIntro" style="font-size:10px;color:var(--muted);margin-top:13px">Exact rates, fees and account terms depend on the approved account. Review the provider's current terms before applying.</p>
+      <p class="terms-intro" id="termsIntro">Exact rates, fees and account terms depend on the approved account. Review the provider's current terms before applying.</p>
     </div>
+
     <div>
       <div class="rate-table" id="rateTable">
         <div class="rate-row" id="rateRow1"><span>Credit limit</span><span>Varies by approved account</span></div>
@@ -1533,24 +1864,40 @@ footer{
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- 14 FAQ -->
 <section class="faq" id="faq">
   <div class="container faq-grid">
     <div>
       <div class="kicker" id="faqKicker">Questions people ask</div>
       <h2 id="faqHeading">Before they apply.</h2>
     </div>
+
     <div class="faq-list" id="faqList">
-      <details id="faq1"><summary id="faqQ1">Is this a loan or a credit card?</summary><p id="faqA1">It is positioned as a vehicle-backed revolving credit card / credit line rather than a simple one-time cash loan.</p></details>
-      <details id="faq2"><summary id="faqQ2">Does my credit have to be perfect?</summary><p id="faqA2">Not necessarily. The provider considers multiple factors including vehicle information, income, expenses, ability to repay and credit history.</p></details>
-      <details id="faq3"><summary id="faqQ3">Can I keep driving my vehicle?</summary><p id="faqA3">Yes. If approved, you generally keep possession and continue driving the vehicle while a lien may be recorded on the title.</p></details>
-      <details id="faq4"><summary id="faqQ4">Can I still qualify if I am paying off my vehicle?</summary><p id="faqA4">Potentially. A refinance path may be available depending on your situation and the provider's requirements.</p></details>
-      <details id="faq5"><summary id="faqQ5">Why do I upload my credit screenshot here?</summary><p id="faqA5">It is part of this landing page's custom customer journey. The external credit-check service is separate from the product provider. The screenshot is not presented as an official provider requirement.</p></details>
+      <details id="faq1">
+        <summary id="faqQ1">Is this a loan or a credit card?</summary>
+        <p id="faqA1">It is positioned as a vehicle-backed revolving credit card / credit line rather than a simple one-time cash loan.</p>
+      </details>
+      <details id="faq2">
+        <summary id="faqQ2">Does my credit have to be perfect?</summary>
+        <p id="faqA2">Not necessarily. The provider considers multiple factors including vehicle information, income, expenses, ability to repay and credit history.</p>
+      </details>
+      <details id="faq3">
+        <summary id="faqQ3">Can I keep driving my vehicle?</summary>
+        <p id="faqA3">Yes. If approved, you generally keep possession and continue driving the vehicle while a lien may be recorded on the title.</p>
+      </details>
+      <details id="faq4">
+        <summary id="faqQ4">Can I still qualify if I am paying off my vehicle?</summary>
+        <p id="faqA4">Potentially. A refinance path may be available depending on your situation and the provider's requirements.</p>
+      </details>
+      <details id="faq5">
+        <summary id="faqQ5">Why do I upload my credit screenshot here?</summary>
+        <p id="faqA5">It is part of this landing page's custom customer journey. The external credit-check service is separate from the product provider. The screenshot is not presented as an official provider requirement.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- FINAL PRODUCT CTA -->
+<!-- 15 FINAL PRODUCT CTA -->
 <section class="final" id="finalCTASection">
   <div class="container final-inner">
     <div class="final-copy">
@@ -1569,77 +1916,91 @@ footer{
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo" id="footerLogo"><span class="logo-mark" id="footerLogoMark">V</span><span id="footerBrandText">Vehicle Credit</span></div>
+        <div class="logo" id="footerLogo">
+          <span class="logo-mark" id="footerLogoMark">V</span>
+          <span id="footerBrandText">Vehicle Credit</span>
+        </div>
         <p id="footerDescription">Independent informational / affiliate page. This page is not the official product provider website.</p>
       </div>
+
       <div class="footer-links">
-        <div class="footer-col" id="footerProduct"><strong>Product</strong><a href="#howItWorks" id="footerHowLink">How It Works</a><a href="#whatYouGet" id="footerGetLink">What You Get</a><a href="#whatYouNeed" id="footerNeedLink">What You Need</a></div>
-        <div class="footer-col" id="footerInfo"><strong>Info</strong><a href="#terms" id="footerTermsLink">Terms</a><a href="#faq" id="footerFAQLink">FAQ</a><a href="#creditCheckStep" id="footerCreditLink">Credit Step</a></div>
+        <div class="footer-col" id="footerProduct">
+          <strong>Product</strong>
+          <a href="#howItWorks" id="footerHowLink">How It Works</a>
+          <a href="#whatYouGet" id="footerGetLink">What You Get</a>
+          <a href="#whatYouNeed" id="footerNeedLink">What You Need</a>
+        </div>
+        <div class="footer-col" id="footerInfo">
+          <strong>Info</strong>
+          <a href="#terms" id="footerTermsLink">Terms</a>
+          <a href="#faq" id="footerFAQLink">FAQ</a>
+          <a href="#creditCheckStep" id="footerCreditLink">Credit Step</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom" id="footerBottom"><span id="copyright">© 2026 Vehicle Credit</span><span id="footerDisclaimer">Eligibility, rates, fees and terms are determined by the product provider.</span></div>
+
+    <div class="footer-bottom" id="footerBottom">
+      <span id="copyright">© 2026 Vehicle Credit</span>
+      <span id="footerDisclaimer">Eligibility, rates, fees and terms are determined by the product provider.</span>
+    </div>
   </div>
 </footer>
 
 <script>
 /* =========================================================
-   URL CONFIG — REPLACE THESE VALUES ONLY
+   REPLACE URLS HERE
    ========================================================= */
-const URLS = {
-  heroBackgroundImageURL: "YOUR_HERO_BACKGROUND_IMAGE_URL",
-  heroCardImageURL: "YOUR_HERO_CARD_IMAGE_URL",
-  vehicleLifestyleImageURL: "YOUR_VEHICLE_LIFESTYLE_IMAGE_URL",
-  titleImageURL: "YOUR_TITLE_IMAGE_URL",
-  stepOneImageURL: "YOUR_STEP_ONE_IMAGE_URL",
-  stepTwoImageURL: "YOUR_STEP_TWO_IMAGE_URL",
-  stepThreeImageURL: "YOUR_STEP_THREE_IMAGE_URL",
-  finalCTAImageURL: "YOUR_FINAL_CTA_IMAGE_URL",
-  testimonial1: "YOUR_TESTIMONIAL_IMAGE_1_URL",
-  testimonial2: "YOUR_TESTIMONIAL_IMAGE_2_URL",
-  testimonial3: "YOUR_TESTIMONIAL_IMAGE_3_URL",
-  testimonial4: "YOUR_TESTIMONIAL_IMAGE_4_URL",
-  testimonial5: "YOUR_TESTIMONIAL_IMAGE_5_URL",
-  externalCreditCheckURL: "YOUR_EXTERNAL_CREDIT_CHECK_URL",
-  yendoAffiliateURL: "YOUR_YENDO_AFFILIATE_LINK"
+const URLS={
+  heroBackgroundImageURL:"YOUR_HERO_BACKGROUND_IMAGE_URL",
+  heroCardImageURL:"YOUR_HERO_CARD_IMAGE_URL",
+  vehicleLifestyleImageURL:"YOUR_VEHICLE_LIFESTYLE_IMAGE_URL",
+  titleImageURL:"YOUR_TITLE_IMAGE_URL",
+  stepOneImageURL:"YOUR_STEP_ONE_IMAGE_URL",
+  stepTwoImageURL:"YOUR_STEP_TWO_IMAGE_URL",
+  stepThreeImageURL:"YOUR_STEP_THREE_IMAGE_URL",
+  finalCTAImageURL:"YOUR_FINAL_CTA_IMAGE_URL",
+  testimonial1:"YOUR_TESTIMONIAL_IMAGE_1_URL",
+  testimonial2:"YOUR_TESTIMONIAL_IMAGE_2_URL",
+  testimonial3:"YOUR_TESTIMONIAL_IMAGE_3_URL",
+  testimonial4:"YOUR_TESTIMONIAL_IMAGE_4_URL",
+  testimonial5:"YOUR_TESTIMONIAL_IMAGE_5_URL",
+  externalCreditCheckURL:"YOUR_EXTERNAL_CREDIT_CHECK_URL",
+  yendoAffiliateURL:"YOUR_YENDO_AFFILIATE_LINK"
 };
 
-/* Image URL application */
-document.getElementById("heroSection").style.backgroundImage =
-  `linear-gradient(100deg,rgba(82,5,20,.96) 0%,rgba(112,8,30,.91) 52%,rgba(112,8,30,.58) 100%),url("${URLS.heroBackgroundImageURL}")`;
-document.getElementById("heroCardImageURL").style.backgroundImage =
-  `url("${URLS.heroCardImageURL}")`;
-document.getElementById("vehicleLifestyleImageURL").style.backgroundImage =
-  `url("${URLS.vehicleLifestyleImageURL}")`;
-document.getElementById("titleImageURL").style.backgroundImage =
-  `url("${URLS.titleImageURL}")`;
-document.getElementById("step1Image").style.backgroundImage =
-  `url("${URLS.stepOneImageURL}")`;
-document.getElementById("step2Image").style.backgroundImage =
-  `url("${URLS.stepTwoImageURL}")`;
-document.getElementById("step3Image").style.backgroundImage =
-  `url("${URLS.stepThreeImageURL}")`;
-document.getElementById("finalCTAImageURL").style.backgroundImage =
-  `url("${URLS.finalCTAImageURL}")`;
+/* Apply images */
+document.getElementById("heroSection").style.backgroundImage=
+`linear-gradient(100deg,rgba(78,5,20,.98) 0%,rgba(112,8,30,.93) 54%,rgba(112,8,30,.64) 100%),url("${URLS.heroBackgroundImageURL}")`;
 
-/* Credit check = ONE action only */
-document.getElementById("headerCreditCheckLink").href = URLS.externalCreditCheckURL;
-document.getElementById("creditCheckButton").href = URLS.externalCreditCheckURL;
+document.getElementById("heroCardImageURL").style.backgroundImage=`url("${URLS.heroCardImageURL}")`;
+document.getElementById("vehicleLifestyleImageURL").style.backgroundImage=`url("${URLS.vehicleLifestyleImageURL}")`;
+document.getElementById("titleImageURL").style.backgroundImage=`url("${URLS.titleImageURL}")`;
+document.getElementById("step1Image").style.backgroundImage=`url("${URLS.stepOneImageURL}")`;
+document.getElementById("step2Image").style.backgroundImage=`url("${URLS.stepTwoImageURL}")`;
+document.getElementById("step3Image").style.backgroundImage=`url("${URLS.stepThreeImageURL}")`;
+document.getElementById("finalCTAImageURL").style.backgroundImage=`url("${URLS.finalCTAImageURL}")`;
 
-/* Affiliate = final product action only */
-document.getElementById("nextStepAffiliateButton").href = URLS.yendoAffiliateURL;
-document.getElementById("bottomAffiliateButton").href = URLS.yendoAffiliateURL;
+/* External credit-check destination — only the dedicated action + header */
+document.getElementById("headerCreditCheckLink").href=URLS.externalCreditCheckURL;
+document.getElementById("creditCheckButton").href=URLS.externalCreditCheckURL;
 
-/* Screenshot journey */
-const input = document.getElementById("creditScreenshotInput");
-const preview = document.getElementById("creditScreenshotPreview");
-const fileName = document.getElementById("selectedFileName");
-const continueBtn = document.getElementById("creditContinueButton");
-const uploadSection = document.getElementById("screenshotUploadSection");
-const nextStep = document.getElementById("nextStepSection");
+/* Affiliate destination — final product actions */
+document.getElementById("nextStepAffiliateButton").href=URLS.yendoAffiliateURL;
+document.getElementById("bottomAffiliateButton").href=URLS.yendoAffiliateURL;
+
+/* =========================================================
+   CUSTOMER RETURN / SCREENSHOT FLOW
+   ========================================================= */
+const input=document.getElementById("creditScreenshotInput");
+const preview=document.getElementById("creditScreenshotPreview");
+const fileName=document.getElementById("selectedFileName");
+const continueBtn=document.getElementById("creditContinueButton");
+const uploadSection=document.getElementById("screenshotUploadSection");
+const nextStep=document.getElementById("nextStepSection");
 
 function showUploadStep(){
   uploadSection.classList.add("visible");
-  setTimeout(() => uploadSection.scrollIntoView({behavior:"smooth",block:"start"}), 80);
+  uploadSection.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 function resetUpload(){
@@ -1652,40 +2013,58 @@ function resetUpload(){
 
 input.addEventListener("change",function(){
   const file=this.files && this.files[0];
-  if(!file){resetUpload();return;}
+
+  if(!file){
+    resetUpload();
+    return;
+  }
+
   if(!file.type.startsWith("image/")){
     resetUpload();
     fileName.textContent="Please choose an image file.";
     return;
   }
+
   fileName.textContent=file.name;
+
   const reader=new FileReader();
+
   reader.onload=e=>{
     preview.src=e.target.result;
     preview.classList.add("visible");
     continueBtn.disabled=false;
     continueBtn.classList.add("ready");
   };
+
   reader.readAsDataURL(file);
 });
 
 continueBtn.addEventListener("click",function(){
   if(this.disabled)return;
+
   nextStep.classList.add("visible");
-  setTimeout(()=>nextStep.scrollIntoView({behavior:"smooth",block:"center"}),80);
+
+  setTimeout(()=>{
+    nextStep.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+  },80);
 });
 
 /*
-  IMPORTANT:
-  We do NOT automatically redirect after Continue.
-  The user must deliberately click See Your Options / Get Started.
+  NO automatic affiliate redirect here.
+  Customer must deliberately click:
+  "See Your Options"
+  or the final "Get Started" CTA.
 */
 
-/* Header readability after scrolling */
+/* Header contrast after scroll */
 const header=document.getElementById("siteHeader");
+
 window.addEventListener("scroll",()=>{
   if(window.scrollY>50){
-    header.style.background="rgba(77,5,20,.9)";
+    header.style.background="rgba(17,17,17,.93)";
     header.style.backdropFilter="blur(10px)";
   }else{
     header.style.background="transparent";
@@ -1693,5 +2072,6 @@ window.addEventListener("scroll",()=>{
   }
 },{passive:true});
 </script>
+
 </body>
 </html>
