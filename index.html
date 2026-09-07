@@ -1,93 +1,729 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vehicle-Backed Credit | Explore Your Options</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore vehicle-backed credit, understand how it works, check your credit as one step, and continue to your available options.">
+<title>The Auto Card — Vehicle-Backed Credit</title>
 <style>
-:root{--wine:#6d1024;--dark:#26070e;--ink:#1c1718;--cream:#f4eee4;--paper:#fffdf9;--muted:#766d6d;--line:#ded5cc;--accent:#e58a68;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.55 Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-.045em;line-height:1.02;margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;border:1px solid transparent;font-weight:800;font-size:14px;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-white{background:#fff;color:var(--wine)}.btn-outline{border-color:#ffffff70;color:#fff;background:#ffffff0d}.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:900;margin-bottom:17px}.kicker:before{content:"";display:inline-block;width:24px;height:1px;background:currentColor;vertical-align:middle;margin-right:9px}
-/* Header */
-header{position:absolute;z-index:10;top:0;left:0;right:0;color:#fff;transition:.25s}.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:19px;font-weight:850;display:flex;gap:9px;align-items:center}.mark{width:32px;height:32px;border:1px solid #fff8;border-radius:50%;display:grid;place-items:center;font-size:12px}.navlinks{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:750}.nav-credit{padding:10px 16px;border:1px solid #fff8;border-radius:999px}
-/* Hero */
-.hero{min-height:730px;display:flex;align-items:center;color:#fff;position:relative;background:center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#330812e8,#330812a8 48%,#33081222),linear-gradient(0deg,#17030955,#0000 55%);z-index:0}.hero .wrap{position:relative;z-index:1}.hero-copy{max-width:670px;padding-top:65px}.hero h1{font-size:clamp(58px,7vw,90px)}.hero-sub{font:500 clamp(21px,2.4vw,29px)/1.15 Georgia,serif;max-width:570px;margin:25px 0 17px}.hero-desc{max-width:560px;color:#ffffffc9;margin:0}.points{display:flex;flex-wrap:wrap;gap:9px 19px;list-style:none;padding:0;margin:24px 0 0;font-weight:700;font-size:13px}.points li:before{content:"✓";color:var(--accent);margin-right:7px}.hero-actions{margin-top:32px}.disclosure{font-size:10px;color:#ffffff9e;margin-top:12px}
-/* Stats */
-.stats{background:var(--wine);color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding:28px;border-right:1px solid #fff2;min-height:135px;display:flex;flex-direction:column;justify-content:center}.stat:last-child{border:0}.stat strong{font:500 40px/1 Georgia,serif}.stat span{font-size:12px;color:#ffffffb8;margin-top:5px}
-/* Sections */
-.section{padding:100px 0}.heading{max-width:700px}.heading h2{font-size:clamp(45px,5.4vw,70px)}.intro{max-width:650px;color:var(--muted);font-size:16px;margin:20px 0 0}.steps{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{background:var(--wine);color:#fff;padding:34px;min-height:315px;position:relative;overflow:hidden}.step:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #fff1;border-radius:50%;right:-70px;bottom:-70px}.num{width:38px;height:38px;border:1px solid #fff6;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:900}.step h3{font-size:35px;margin-top:54px}.step p{color:#ffffffb8;font-size:13px;max-width:300px}
-/* Vehicle */
-.dark{background:var(--ink);color:#fff}.vehicle-grid{display:grid;grid-template-columns:1fr .95fr;gap:70px;align-items:center}.dark .kicker{color:#e8a58c}.dark .intro{color:#ffffffa8}.vehicle-img{min-height:500px;border-radius:20px;background:center/cover no-repeat;position:relative}.vehicle-img:after{content:"Vehicle equity → available credit";position:absolute;left:20px;bottom:20px;background:#0007;border:1px solid #fff2;padding:10px 13px;border-radius:9px;font-size:12px}.points2{display:grid;gap:16px;margin-top:30px}.point{display:grid;grid-template-columns:34px 1fr;gap:12px;border-bottom:1px solid #fff1;padding-bottom:15px}.circle{width:30px;height:30px;border:1px solid #fff4;border-radius:50%;display:grid;place-items:center;font-size:10px}.point strong{font-size:14px}.point p{margin:3px 0 0;color:#ffffff99;font-size:12px}
-/* Info */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:52px}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:40px}.card h3{font-size:38px}.card p{color:var(--muted);font-size:14px}.list{list-style:none;padding:0;margin:23px 0 0;display:grid;gap:11px}.list li{font-size:13px}.list li:before{content:"✓";color:var(--wine);font-weight:900;margin-right:9px}
-/* Benefits */
-.benefits{background:#ebe1d4}.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:52px}.benefit{background:#fff9;border:1px solid var(--line);border-radius:15px;padding:28px;min-height:225px}.benefit small{color:var(--wine);font-weight:900;letter-spacing:.1em}.benefit h3{font-size:29px;margin-top:46px}.benefit p{font-size:12px;color:var(--muted)}
-/* Credit */
-.credit{background:var(--paper)}.credit-panel{background:var(--wine);color:#fff;border-radius:24px;padding:60px;display:grid;grid-template-columns:1fr .7fr;gap:55px;align-items:center}.credit-panel .kicker{color:#e8a58c}.credit-panel h2{font-size:clamp(45px,5vw,67px)}.credit-panel .intro{color:#ffffffb8}.credit-box{border:1px solid #fff2;background:#fff0d;border-radius:17px;padding:26px}.credit-box small{color:#ffffff91;text-transform:uppercase;letter-spacing:.1em;font-weight:900}.credit-box h3{font-size:28px;margin-top:7px}.credit-box p{font-size:12px;color:#ffffff9e}.credit-box .btn{width:100%;margin-top:8px}
-/* Upload */
-.upload{display:none}.upload.show{display:block;animation:up .45s ease}@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.upload-grid{display:grid;grid-template-columns:1fr .85fr;gap:55px}.uploadbox{background:var(--paper);border:1px dashed #6d102455;border-radius:20px;padding:38px}.upload-icon{width:48px;height:48px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-weight:900}.uploadbox h3{font-size:36px;margin-top:22px}.uploadbox p{color:var(--muted);font-size:13px}.file{display:none}.choose{display:inline-flex;margin-top:16px;padding:14px 20px;border-radius:999px;background:var(--wine);color:#fff;font-weight:800;font-size:13px}.filename{font-size:11px;color:var(--muted);margin-top:9px;min-height:17px}.preview{display:none;max-width:250px;max-height:250px;margin-top:17px;border-radius:10px;border:1px solid var(--line);object-fit:contain}.preview.show{display:block}.continue{width:100%;margin-top:18px;border:0;background:#b9b2ad;color:#fff;opacity:.55;pointer-events:none}.continue.ready{background:var(--wine);opacity:1;pointer-events:auto}.privacy{font-size:10px!important;color:#8b8181!important}.next{display:none;margin-top:38px;background:var(--ink);color:#fff;border-radius:23px;text-align:center;padding:52px 25px}.next.show{display:block;animation:up .45s ease}.next .kicker{color:#e8a58c}.next h2{font-size:clamp(42px,5vw,64px);max-width:760px;margin:auto}.next p{max-width:610px;color:#ffffff9e;margin:18px auto 25px;font-size:14px}.next small{display:block;color:#ffffff66;margin-top:10px;font-size:10px}
-/* Quote/FAQ/CTA */
-.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:center}.quote{font:500 clamp(33px,4vw,53px)/1.04 Georgia,serif;letter-spacing:-.04em}.quote-meta{color:var(--muted);font-size:12px;margin-top:20px}.life-img{min-height:400px;border-radius:20px;background:center/cover no-repeat}.faq{max-width:900px;margin:50px auto 0;border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:21px 0}summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary:after{content:"+";font:22px Georgia}details[open] summary:after{content:"−"}details p{color:var(--muted);font-size:13px;max-width:760px}.final{background:var(--wine);color:#fff;text-align:center;padding:105px 20px}.final h2{font-size:clamp(50px,7vw,85px);max-width:850px;margin:auto}.final p{max-width:620px;color:#ffffffb8;margin:20px auto 28px}.final .disclosure{color:#ffffff85}footer{background:var(--ink);color:#fff;padding:58px 0 28px}.foot{display:flex;justify-content:space-between;gap:40px}.foot p{color:#ffffff7a;max-width:410px;font-size:12px}.footlinks{display:flex;gap:55px}.footlinks strong{font-size:11px}.footlinks a{display:block;color:#ffffff7a;font-size:11px;margin-top:8px}.bottom{border-top:1px solid #fff1;margin-top:45px;padding-top:20px;color:#ffffff55;font-size:10px;display:flex;justify-content:space-between;gap:20px}
-@media(max-width:900px){.navlinks a:not(.nav-credit){display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.steps,.benefit-grid{grid-template-columns:1fr 1fr}.vehicle-grid,.upload-grid,.quote-grid,.credit-panel{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.vehicle-img{min-height:400px}.credit-panel{padding:38px}.foot{flex-direction:column}}
-@media(max-width:600px){.wrap{width:min(calc(100% - 28px),var(--max))}.hero{min-height:680px}.hero h1{font-size:53px}.section{padding:75px 0}.stats-grid,.steps,.benefit-grid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #fff2}.stat:last-child{border-bottom:0}.step{min-height:270px}.credit-panel{padding:30px 22px}.uploadbox{padding:28px 22px}.life-img{min-height:290px}.footlinks{flex-wrap:wrap;gap:30px}.bottom{flex-direction:column}}
+:root{
+  --red:#760b22;
+  --red2:#5b0719;
+  --orange:#ff6537;
+  --orange2:#f58b64;
+  --cream:#f8f3eb;
+  --cream2:#eee6da;
+  --ink:#181416;
+  --muted:#746b69;
+  --white:#fffdf9;
+  --line:rgba(24,20,22,.12);
+  --max:1180px;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(calc(100% - 44px),var(--max));margin:auto}
+.serif,h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em;line-height:.96}
+.kicker{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 19px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:800;transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-light{background:#fff;color:var(--red)}
+.btn-red{background:var(--red);color:#fff}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.section{padding:82px 0}
+.section-head{max-width:720px}
+.section-head h2{font-size:clamp(43px,5.5vw,67px);margin:0}
+.section-head p{max-width:620px;margin:17px 0 0;color:var(--muted);font-size:13px}
+
+/* HEADER */
+.header{position:absolute;z-index:20;left:0;right:0;top:0;color:#fff}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:12px;display:flex;align-items:center;gap:7px}
+.logo-mark{width:19px;height:19px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center;font-size:8px}
+.nav-links{display:flex;align-items:center;gap:23px;font-size:9px;font-weight:700}
+.nav-links a{opacity:.9}
+.nav-check{border:1px solid rgba(255,255,255,.65);padding:7px 11px;border-radius:999px}
+
+/* HERO — intentionally follows the reference: red/wine field + orange card/image */
+.hero{
+  min-height:600px;color:#fff;position:relative;overflow:hidden;
+  background:
+    linear-gradient(100deg,rgba(82,5,20,.96) 0%,rgba(112,8,30,.91) 52%,rgba(112,8,30,.58) 100%),
+    url("YOUR_HERO_BACKGROUND_IMAGE_URL") center/cover no-repeat;
+}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 48%,rgba(255,101,55,.30),transparent 28%);pointer-events:none}
+.hero-inner{min-height:600px;display:flex;align-items:center;position:relative;z-index:2}
+.hero-copy{width:53%;padding-top:35px}
+.hero h1{font-size:clamp(51px,7vw,83px);margin:0;max-width:570px}
+.hero-sub{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.02;max-width:420px;margin:17px 0 0}
+.hero-text{font-size:11px;color:rgba(255,255,255,.78);max-width:420px;margin:14px 0 0}
+.hero-points{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:5px;font-size:10px;font-weight:700}
+.hero-points li:before{content:"✓";color:#ffab8d;margin-right:7px}
+.hero-actions{margin-top:23px;display:flex;gap:9px}
+.hero-note{font-size:8px;color:rgba(255,255,255,.5);margin-top:9px}
+.hero-product-visual{
+  position:absolute;right:-5%;top:50%;transform:translateY(-50%);
+  width:52%;height:480px;
+  background:url("YOUR_HERO_CARD_IMAGE_URL") center/contain no-repeat;
+  filter:drop-shadow(0 30px 35px rgba(20,0,5,.3));
+}
+.hero-image-id{position:absolute;width:1px;height:1px;overflow:hidden;opacity:0}
+
+/* STATS */
+.stats{background:var(--cream);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{min-height:82px;padding:20px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.stat:last-child{border:0}
+.stat strong{font-family:Georgia,serif;font-size:21px;font-weight:400}
+.stat span{font-size:8px;color:var(--muted);margin-top:2px}
+
+/* THREE STEPS */
+.steps{background:var(--cream)}
+.steps-head{text-align:center;max-width:700px;margin:auto}
+.steps-head h2{font-size:clamp(38px,4.8vw,58px)}
+.steps-head p{font-size:12px;color:var(--muted);margin-top:13px}
+.steps-grid{margin-top:35px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.step{min-height:265px;background:var(--red);color:#fff;padding:20px 20px 16px;position:relative;overflow:hidden}
+.step:nth-child(2){background:#6a0a20}
+.step:nth-child(3){background:#720b23}
+.step-no{font-size:10px;border:1px solid rgba(255,255,255,.45);width:23px;height:23px;border-radius:50%;display:grid;place-items:center}
+.step h3{font-size:27px;margin:28px 0 0}
+.step p{font-size:9px;color:rgba(255,255,255,.72);max-width:230px;margin-top:9px}
+.step-art{height:85px;margin-top:15px;background:center/contain no-repeat}
+.step-art1{background-image:url("YOUR_STEP_ONE_IMAGE_URL")}
+.step-art2{background-image:url("YOUR_STEP_TWO_IMAGE_URL")}
+.step-art3{background-image:url("YOUR_STEP_THREE_IMAGE_URL")}
+
+/* VEHICLE */
+.vehicle{background:#141113;color:#fff;padding:0}
+.vehicle-inner{min-height:350px;display:grid;grid-template-columns:.9fr 1.1fr}
+.vehicle-copy{padding:62px 45px 62px 0;display:flex;flex-direction:column;justify-content:center}
+.vehicle .kicker{color:#ff9b7a}
+.vehicle h2{font-size:clamp(40px,5vw,58px);margin:0}
+.vehicle-copy p{font-size:10px;color:rgba(255,255,255,.67);max-width:410px;margin:15px 0 0}
+.vehicle-points{margin-top:20px;display:grid;gap:9px}
+.vehicle-point{display:flex;gap:9px;font-size:9px;color:rgba(255,255,255,.72)}
+.vehicle-point b{color:#fff}
+.vehicle-image{min-height:350px;background:url("YOUR_VEHICLE_LIFESTYLE_IMAGE_URL") center/cover no-repeat}
+
+/* TITLE */
+.title-section{background:var(--cream)}
+.title-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.title-image{min-height:360px;background:url("YOUR_TITLE_IMAGE_URL") center/cover no-repeat;border-radius:6px}
+.title-copy h2{font-size:clamp(40px,5vw,59px);margin:0}
+.title-copy p{font-size:11px;color:var(--muted);margin-top:15px}
+.title-list{list-style:none;padding:0;margin:20px 0;display:grid;gap:11px}
+.title-list li{font-size:10px;display:flex;gap:8px}
+.title-list li:before{content:"✓";color:var(--red);font-weight:900}
+
+/* WHAT YOU NEED */
+.need{background:var(--cream)}
+.need-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:34px}
+.need-card{background:var(--white);padding:30px 32px;min-height:210px;border-radius:5px}
+.need-card.dark{background:var(--red);color:#fff}
+.need-card h3{font-size:30px;margin:0}
+.need-card p{font-size:10px;color:var(--muted);margin-top:12px}
+.need-card.dark p{color:rgba(255,255,255,.7)}
+.need-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:7px}
+.need-list li{font-size:9px}
+.need-list li:before{content:"✓";margin-right:7px;color:var(--orange)}
+
+/* WHAT YOU GET — reference-like 3x2 cards */
+.get{background:var(--cream)}
+.get-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:34px}
+.get-card{background:#eee7dd;padding:23px 22px;min-height:155px}
+.get-card h3{font-size:24px;margin:24px 0 0}
+.get-card p{font-size:9px;color:var(--muted);margin-top:8px}
+.get-icon{width:19px;height:19px;border:1px solid rgba(118,11,34,.35);border-radius:4px;display:grid;place-items:center;font-size:8px;color:var(--red)}
+.get-note{text-align:center;font-size:9px;color:var(--muted);margin-top:16px}
+
+/* REFINANCE STRIP */
+.refi{padding:45px 0;background:var(--cream)}
+.refi-box{
+  background:linear-gradient(110deg,var(--red),#580617);
+  color:#fff;border-radius:6px;padding:36px 40px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;
+}
+.refi-box h2{font-size:clamp(32px,4vw,49px);margin:0}
+.refi-box p{font-size:10px;color:rgba(255,255,255,.68);margin:10px 0 0}
+.refi-side{border-left:1px solid rgba(255,255,255,.2);padding-left:30px;display:grid;gap:12px}
+.refi-side div{font-size:9px;color:rgba(255,255,255,.7)}
+.refi-side b{display:block;color:#fff;font-size:10px;margin-bottom:3px}
+
+/* CREDIT CHECK — only one custom step */
+.credit{background:var(--cream);padding:60px 0 20px}
+.credit-box{
+  background:#fff;border:1px solid var(--line);border-radius:6px;
+  padding:38px 42px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+}
+.credit .kicker{margin-bottom:10px}
+.credit h2{font-size:clamp(36px,4.8vw,54px);margin:0}
+.credit p{font-size:11px;color:var(--muted);max-width:590px;margin:12px 0 0}
+.credit-action{text-align:right}
+.credit-action-label{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--red);margin-bottom:8px}
+
+/* UPLOAD REVEALED AFTER RETURN */
+.upload{display:none;background:var(--cream);padding:45px 0 20px}
+.upload.visible{display:block}
+.upload-grid{display:grid;grid-template-columns:1fr .85fr;gap:55px;align-items:center}
+.upload h2{font-size:clamp(42px,5vw,60px);margin:0}
+.upload-intro{font-size:12px;color:var(--muted);max-width:560px;margin-top:14px}
+.upload-box{background:#fff;border:1px dashed rgba(118,11,34,.35);border-radius:6px;padding:30px}
+.upload-box h3{font-size:29px;margin:0}
+.upload-box p{font-size:10px;color:var(--muted);margin:8px 0 0}
+.file-input{display:none}
+.choose{margin-top:19px;display:inline-flex;min-height:40px;padding:0 17px;align-items:center;border-radius:999px;background:var(--red);color:#fff;font-size:10px;font-weight:800;cursor:pointer}
+.file-name{font-size:9px;color:var(--muted);margin-top:9px;min-height:14px}
+.preview{display:none;margin-top:14px;max-width:180px;max-height:180px;object-fit:contain;border:1px solid var(--line);border-radius:4px}
+.preview.visible{display:block}
+.continue{width:100%;margin-top:15px;border:0;background:#bdb7b2;color:#fff;opacity:.55;pointer-events:none}
+.continue.ready{background:var(--orange);opacity:1;pointer-events:auto}
+.upload-disclaimer{font-size:8px!important;color:#918887!important}
+
+/* NEXT STEP */
+.next-step{display:none;background:var(--red);color:#fff;padding:48px 30px;text-align:center;border-radius:6px;margin-top:25px}
+.next-step.visible{display:block}
+.next-step .kicker{color:#ffab8f}
+.next-step h2{font-size:clamp(39px,5vw,60px);margin:0 auto;max-width:720px}
+.next-step p{font-size:11px;color:rgba(255,255,255,.7);max-width:600px;margin:13px auto 21px}
+.next-step .btn{background:#fff;color:var(--red)}
+.next-note{font-size:8px!important;color:rgba(255,255,255,.45)!important;margin-top:9px!important}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--cream);padding:65px 0}
+.test-head{text-align:center}
+.test-head h2{font-size:42px;margin:0}
+.test-grid{display:flex;gap:5px;justify-content:center;align-items:end;margin-top:28px;overflow:hidden}
+.person{width:125px;height:170px;border-radius:4px;background:center/cover no-repeat;position:relative;opacity:.65}
+.person.active{height:205px;width:145px;opacity:1}
+.person span{position:absolute;left:8px;bottom:8px;color:#fff;font-size:8px;font-weight:700;text-shadow:0 1px 4px #000}
+
+/* TERMS */
+.terms{background:var(--cream);padding:70px 0}
+.terms-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.terms h2{font-size:43px;margin:0}
+.rate-table{border-top:1px solid var(--line)}
+.rate-row{display:grid;grid-template-columns:1fr 1fr;padding:11px 14px;border-bottom:1px solid var(--line);font-size:9px}
+.rate-row:nth-child(even){background:#eee7dd}
+.rate-note{font-size:8px;color:var(--muted);margin-top:10px}
+
+/* FAQ */
+.faq{background:var(--cream);padding:55px 0 75px}
+.faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px}
+.faq h2{font-size:43px;margin:0}
+.faq-list{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:12px 0}
+summary{list-style:none;cursor:pointer;font-size:10px;font-weight:800;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+"}
+details[open] summary:after{content:"−"}
+details p{font-size:9px;color:var(--muted);max-width:700px;margin:8px 0}
+
+/* FINAL CTA — product journey, not credit journey */
+.final{background:#111011;color:#fff;padding:0}
+.final-inner{min-height:330px;display:flex;align-items:center;position:relative;overflow:hidden}
+.final-copy{position:relative;z-index:2;max-width:430px}
+.final .kicker{color:#ff9b7a}
+.final h2{font-size:clamp(43px,5vw,60px);margin:0}
+.final p{font-size:10px;color:rgba(255,255,255,.68);margin:13px 0 19px}
+.final-image{position:absolute;right:-2%;top:0;bottom:0;width:55%;background:url("YOUR_FINAL_CTA_IMAGE_URL") center/cover no-repeat;opacity:.95}
+.final-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#111011 0%,rgba(17,16,17,.65) 22%,transparent 65%)}
+
+/* FOOTER */
+footer{background:#111011;color:#fff;padding:35px 0 20px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-top{display:flex;justify-content:space-between;gap:50px}
+.footer-brand{max-width:400px}
+.footer-brand p{font-size:8px;color:rgba(255,255,255,.42);margin-top:10px}
+.footer-links{display:flex;gap:55px}
+.footer-col strong{font-size:9px}
+.footer-col a{display:block;font-size:8px;color:rgba(255,255,255,.45);margin-top:7px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:13px;display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,.35)}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+  .hero-copy{width:62%}
+  .hero-product-visual{width:48%;right:-10%;opacity:.85}
+  .title-grid,.terms-grid,.faq-grid,.upload-grid{grid-template-columns:1fr;gap:30px}
+  .title-image{min-height:280px}
+  .credit-box{grid-template-columns:1fr}
+  .credit-action{text-align:left}
+  .refi-box{grid-template-columns:1fr}
+  .refi-side{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:17px 0 0}
+  .test-grid{justify-content:flex-start}
+}
+@media(max-width:620px){
+  .container{width:min(calc(100% - 28px),var(--max))}
+  .nav-links a:not(.nav-check){display:none}
+  .hero{min-height:680px}
+  .hero-inner{min-height:680px;align-items:flex-start;padding-top:125px}
+  .hero-copy{width:100%}
+  .hero-product-visual{top:auto;bottom:-25px;transform:none;width:72%;height:290px;right:-13%;opacity:.65}
+  .hero h1{font-size:53px;max-width:430px}
+  .hero-sub{font-size:17px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--line)}
+  .stat:nth-child(2){border-right:0}
+  .steps-grid,.get-grid,.need-grid{grid-template-columns:1fr}
+  .step{min-height:245px}
+  .vehicle-inner{grid-template-columns:1fr}
+  .vehicle-copy{padding:55px 0}
+  .vehicle-image{min-height:270px}
+  .section{padding:65px 0}
+  .footer-top,.footer-bottom{flex-direction:column}
+  .footer-links{gap:30px}
+  .final-image{width:70%;opacity:.45}
+}
 </style>
 </head>
+
 <body>
-<header id="siteHeader"><div class="wrap nav"><a href="#top" class="brand" id="brandLink"><span class="mark" id="brandMark">V</span><span id="brandText">Vehicle Credit</span></a><nav class="navlinks" id="mainNavigation"><a href="#howItWorks" id="howNav">How It Works</a><a href="#whatYouGet" id="getNav">What You Get</a><a href="#faq" id="faqNav">FAQ</a><a href="YOUR_EXTERNAL_CREDIT_CHECK_URL" id="headerCreditCheckLink" class="nav-credit" target="_blank" rel="noopener">Check Your Credit</a></nav></div></header>
+<!--
+  IMPORTANT:
+  This is an independent affiliate/informational landing page.
+  It is designed to use the same general visual language as the supplied reference,
+  but it should NOT claim to be the official Yendo website or use Yendo's logo as if official.
+
+  REPLACE URLS in the URL CONFIG below.
+-->
+
+<header class="header" id="siteHeader">
+  <div class="container nav">
+    <a href="#top" class="logo" id="brandLink">
+      <span class="logo-mark" id="brandMark">V</span>
+      <span id="brandText">Vehicle Credit</span>
+    </a>
+    <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
+      <a href="#howItWorks" id="navHowItWorks">How It Works</a>
+      <a href="#whatYouGet" id="navWhatYouGet">What You Get</a>
+      <a href="#faq" id="navFAQ">FAQ</a>
+      <a href="YOUR_EXTERNAL_CREDIT_CHECK_URL" target="_blank" rel="noopener" id="headerCreditCheckLink" class="nav-check">Check Your Credit</a>
+    </nav>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero" id="heroSection"><div class="wrap"><div class="hero-copy"><div class="kicker" id="heroKicker">Vehicle-backed credit</div><h1 id="heroTitle">The Auto Card</h1><p class="hero-sub" id="heroSubtitle">A credit card powered by the value you have in your vehicle.</p><p class="hero-desc" id="heroDescription">Your vehicle can do more than get you where you need to go. Vehicle-backed credit can give you access to revolving credit while you continue driving your vehicle.</p><ul class="points" id="heroPoints"><li id="heroPoint1">Your vehicle equity can support your credit line</li><li id="heroPoint2">Credit history is only one part of the picture</li><li id="heroPoint3">Keep driving your vehicle</li></ul><div class="hero-actions"><a href="#productHighlights" class="btn btn-white" id="heroExploreButton">Explore How It Works</a></div><div class="disclosure" id="heroDisclosure">Independent informational / affiliate page. Approval, eligibility and account terms are determined by the provider.</div></div></div></section>
-<section class="stats" id="productHighlights"><div class="wrap stats-grid"><div class="stat" id="statLimit"><strong>Up to $10K</strong><span>Potential credit limit</span></div><div class="stat" id="statDecision"><strong>~1 min</strong><span>Potential pre-approval decision</span></div><div class="stat" id="statAccess"><strong>Minutes</strong><span>Potential virtual-card access after approval</span></div><div class="stat" id="statCashback"><strong>1.5%</strong><span>Unlimited cashback on eligible purchases when conditions are met</span></div></div></section>
-<section class="section" id="howItWorks"><div class="wrap"><div class="heading"><div class="kicker" style="color:var(--wine)">Simple process</div><h2>From vehicle to available credit, in three steps.</h2><p class="intro">The product is built around your vehicle, financial picture and ability to repay. You explore an offer, verify your information and vehicle, then access your credit if approved.</p></div><div class="steps"><article class="step" id="step1"><div class="num">01</div><h3>Explore your offer</h3><p>Start with a pre-approval check to see whether you may qualify. Checking an offer does not necessarily impact your credit score.</p></article><article class="step" id="step2"><div class="num">02</div><h3>Verify you & your vehicle</h3><p>If you move forward, the provider verifies identity, vehicle and financial information.</p></article><article class="step" id="step3"><div class="num">03</div><h3>Start using your credit</h3><p>If approved, you can access available revolving credit and use the card for eligible purchases.</p></article></div></div></section>
-<section class="section dark" id="vehicleConcept"><div class="wrap vehicle-grid"><div><div class="kicker">How your vehicle becomes credit</div><h2>Your vehicle has value. That value can support your credit.</h2><p class="intro">Vehicle equity is the portion of your vehicle's value that you have already paid for. A vehicle-backed credit product can consider that equity alongside income, expenses and credit history.</p><div class="points2"><div class="point"><div class="circle">01</div><div><strong>Vehicle equity matters</strong><p>Vehicle value and equity can be part of the qualification decision.</p></div></div><div class="point"><div class="circle">02</div><div><strong>Credit history is not the whole story</strong><p>The provider may also consider income, expenses, vehicle details and ability to repay.</p></div></div><div class="point"><div class="circle">03</div><div><strong>You keep your vehicle</strong><p>A lien may be recorded on the title while you continue driving and maintaining the vehicle.</p></div></div></div></div><div class="vehicle-img" id="vehicleConceptImageURL" role="img" aria-label="Vehicle-backed credit visual"></div></div></section>
-<section class="section" id="requirements"><div class="wrap"><div class="heading"><div class="kicker" style="color:var(--wine)">Good to know</div><h2>What happens to your title — and what you need.</h2><p class="intro">The goal is to make the product easy to understand before you decide whether to continue.</p></div><div class="cards"><article class="card" id="titleCard"><h3>Your title</h3><p>If approved, the provider records a lien on your vehicle title as security for the credit. You continue to own and drive the vehicle while the account is active.</p><ul class="list"><li>Your vehicle remains with you.</li><li>You continue driving and maintaining it.</li><li>Registration and insurance remain in your name.</li><li>The lien can be released after the account is settled under the provider's terms.</li></ul></article><article class="card" id="needCard"><h3>What you need</h3><p>Eligibility depends on the provider's review. Typical requirements include:</p><ul class="list"><li>A safe, working vehicle</li><li>Vehicle title in your name</li><li>Valid government-issued identification</li><li>Income and ability to repay</li></ul></article></div></div></section>
-<section class="section benefits" id="whatYouGet"><div class="wrap"><div class="heading"><div class="kicker" style="color:var(--wine)">What you get</div><h2>Credit designed around the value in your vehicle.</h2><p class="intro">This is a revolving credit card / credit line rather than a simple one-time cash loan. If approved, you can use available credit for eligible purchases and repay according to the account terms.</p></div><div class="benefit-grid"><article class="benefit" id="benefit1"><small>01 / REVOLVING</small><h3>Reusable credit</h3><p>Use available credit, make payments and potentially reuse available credit.</p></article><article class="benefit" id="benefit2"><small>02 / VIRTUAL</small><h3>Virtual card</h3><p>A virtual card may become available quickly after approval.</p></article><article class="benefit" id="benefit3"><small>03 / REWARDS</small><h3>Cashback</h3><p>Eligible purchases may earn unlimited cashback when program conditions are met.</p></article><article class="benefit" id="benefit4"><small>04 / CREDIT</small><h3>Credit reporting</h3><p>Payment activity may be reported to major credit bureaus.</p></article></div></div></section>
-<section class="section" id="refinance"><div class="wrap"><article class="card" style="background:var(--wine);color:#fff;border:0"><div class="kicker" style="color:#e8a58c">Still paying off your vehicle?</div><h2 style="font-size:clamp(43px,5vw,65px);max-width:800px">An existing auto loan may not automatically rule you out.</h2><p style="color:#ffffffb8;max-width:700px">Depending on your situation, the provider may offer a refinance path that combines an auto-loan refinance with the credit-card application. Availability and approval depend on the provider.</p></article></div></section>
-<!-- ONE credit-check step -->
-<section class="section credit" id="creditCheckStep"><div class="wrap"><div class="credit-panel"><div><div class="kicker">Step 5 / Credit check</div><h2>Ready to review your starting point?</h2><p class="intro">This is one step in the journey — not the purpose of this page. Use the external credit-check service, then manually return here to continue.</p></div><div class="credit-box" id="creditActionCard"><small>Your next action</small><h3>Check your credit</h3><p>Your result can help you understand your position before continuing to the product.</p><a href="YOUR_EXTERNAL_CREDIT_CHECK_URL" class="btn btn-white" id="creditCheckButton" target="_blank" rel="noopener">Check Your Credit</a></div></div></div></section>
-<!-- Upload is revealed only after the customer returns; no automatic redirect -->
-<section class="section upload" id="screenshotUploadSection"><div class="wrap"><div class="upload-grid"><div><div class="kicker" style="color:var(--wine)">Next step</div><h2 style="font-size:clamp(45px,5vw,68px)">You're back. Let's continue.</h2><p class="intro">Upload the credit-score screenshot you just checked. In this front-end version, the image is previewed locally in your browser.</p></div><div class="uploadbox" id="screenshotUploadBox"><div class="upload-icon">↑</div><h3>Attach your screenshot</h3><p>Use a clear screenshot showing your name and credit score. Do not upload passwords, bank information, card numbers or other sensitive information.</p><input id="creditScreenshotInput" class="file" type="file" accept="image/png,image/jpeg,image/webp"><label for="creditScreenshotInput" class="choose" id="chooseScreenshotButton">Choose Screenshot</label><div class="filename" id="selectedFileName">No file selected</div><img id="creditScreenshotPreview" class="preview" alt="Credit score screenshot preview"><button id="creditContinueButton" class="btn continue" type="button" disabled>Continue</button><p class="privacy">No server upload is performed by this front end. Connect a secure backend later if required.</p></div></div><div class="next" id="nextStepSection"><div class="kicker">You're ready for the next step</div><h2>Now explore your available vehicle-backed credit options.</h2><p>Your credit-check step is complete. Continue to the product provider to review your options and complete the application if you choose to move forward.</p><a href="YOUR_YENDO_AFFILIATE_LINK" class="btn btn-white" id="nextStepAffiliateButton" target="_blank" rel="noopener">See Your Options</a><small>You will leave this page and continue to the product provider.</small></div></div></section>
-<section class="section" id="trust"><div class="wrap quote-grid"><div><div class="kicker" style="color:var(--wine)">Keep moving forward</div><div class="quote">Your vehicle is already an asset. The right credit product can help you put that value to work.</div><div class="quote-meta">Review eligibility, rates, fees and account terms directly with the provider before applying.</div></div><div class="life-img" id="lifestyleImageURL" role="img" aria-label="Vehicle lifestyle image"></div></div></section>
-<section class="section" id="terms"><div class="wrap"><div class="heading"><div class="kicker" style="color:var(--wine)">Before you apply</div><h2>Understand the account terms.</h2><p class="intro">Credit limits, APR, annual fees, cash-advance fees, lien-related fees and other terms can apply. Exact terms vary by approved account and should be reviewed with the provider.</p></div></div></section>
-<section class="section" id="faq"><div class="wrap"><div class="heading"><div class="kicker" style="color:var(--wine)">Questions</div><h2>A few things worth knowing.</h2></div><div class="faq"><details id="faq1"><summary>Is this a loan or a credit card?</summary><p>The product is positioned as a vehicle-backed revolving credit card / credit line. It is not simply a one-time cash loan.</p></details><details id="faq2"><summary>Does my credit score have to be perfect?</summary><p>Not necessarily. Multiple factors may be considered, including credit history, vehicle information, income, expenses and ability to repay.</p></details><details id="faq3"><summary>Do I have to stop driving my vehicle?</summary><p>No. If approved, you generally keep possession and continue driving the vehicle, while a lien may be recorded on the title under the account terms.</p></details><details id="faq4"><summary>Can I qualify if I am still paying off my vehicle?</summary><p>Potentially. Depending on the situation, a refinance option may be available. The provider makes the final determination.</p></details><details id="faq5"><summary>What happens after I finish the credit-check step?</summary><p>Return to this page, attach your credit-score screenshot and click Continue. The page then shows the next product-focused step instead of automatically redirecting you.</p></details></div></div></section>
-<section class="final" id="finalCTA"><div class="wrap"><h2>Ready to explore your options?</h2><p>You've learned how vehicle-backed credit works. When you're ready, continue to the provider to see what you may qualify for and complete the next step.</p><a href="YOUR_YENDO_AFFILIATE_LINK" class="btn btn-white" id="bottomAffiliateButton" target="_blank" rel="noopener">Get Started</a><div class="disclosure">Affiliate disclosure: this page may receive compensation if you continue through our referral link.</div></div></section>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="kicker" style="color:#ff9b7a" id="heroKicker">Vehicle-backed credit</div>
+      <h1 id="heroTitle">The Auto Card</h1>
+      <div class="hero-sub" id="heroSubtitle">The first credit card powered by your vehicle.</div>
+      <p class="hero-text" id="heroDescription">
+        A revolving credit product that uses the value in your vehicle as part of the qualification process,
+        while you continue driving your vehicle.
+      </p>
+      <ul class="hero-points" id="heroPoints">
+        <li id="heroPoint1">Vehicle equity can be part of your credit decision</li>
+        <li id="heroPoint2">Multiple factors may be considered, not credit history alone</li>
+        <li id="heroPoint3">If approved, use available credit for eligible purchases</li>
+      </ul>
+      <div class="hero-actions" id="heroActions">
+        <a href="#productOverview" class="btn btn-light" id="heroExploreButton">Explore the Product</a>
+      </div>
+      <div class="hero-note" id="heroDisclosure">Independent affiliate/informational page. Approval and terms are determined by the provider.</div>
+    </div>
+    <div class="hero-product-visual" id="heroCardImageURL" aria-label="Product card visual"></div>
+  </div>
+</section>
+
+<!-- PRODUCT HIGHLIGHTS -->
+<section class="stats" id="productOverview">
+  <div class="container stats-grid">
+    <div class="stat" id="stat1"><strong id="stat1Value">Up to $10,000</strong><span id="stat1Label">Potential credit limit</span></div>
+    <div class="stat" id="stat2"><strong id="stat2Value">1 minute</strong><span id="stat2Label">Potential pre-approval decision</span></div>
+    <div class="stat" id="stat3"><strong id="stat3Value">2 minutes</strong><span id="stat3Label">Potential access after approval</span></div>
+    <div class="stat" id="stat4"><strong id="stat4Value">1.5%</strong><span id="stat4Label">Unlimited cashback on eligible purchases when conditions apply</span></div>
+  </div>
+</section>
+
+<!-- OFFICIAL PRODUCT FLOW -->
+<section class="section steps" id="howItWorks">
+  <div class="container">
+    <div class="steps-head">
+      <div class="kicker" id="stepsKicker">From application to card</div>
+      <h2 id="stepsTitle">In three simple steps.</h2>
+      <p id="stepsIntro">Understand the product first. Then, if it fits your situation, continue through the provider's application process.</p>
+    </div>
+    <div class="steps-grid" id="stepsGrid">
+      <article class="step" id="step1">
+        <div class="step-no" id="step1Number">01</div>
+        <h3 id="step1Title">Get pre-approved</h3>
+        <p id="step1Text">Check whether you may qualify without the initial offer check necessarily impacting your credit score.</p>
+        <div class="step-art step-art1" id="step1Image"></div>
+      </article>
+      <article class="step" id="step2">
+        <div class="step-no" id="step2Number">02</div>
+        <h3 id="step2Title">Verify yourself and your vehicle</h3>
+        <p id="step2Text">The provider reviews identity, vehicle and financial information before a final decision.</p>
+        <div class="step-art step-art2" id="step2Image"></div>
+      </article>
+      <article class="step" id="step3">
+        <div class="step-no" id="step3Number">03</div>
+        <h3 id="step3Title">Start spending</h3>
+        <p id="step3Text">If approved, access your available revolving credit and use the card for eligible purchases.</p>
+        <div class="step-art step-art3" id="step3Image"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE CONCEPT -->
+<section class="vehicle" id="vehicleCreditConcept">
+  <div class="container vehicle-inner">
+    <div class="vehicle-copy">
+      <div class="kicker" id="vehicleKicker">How your vehicle becomes credit</div>
+      <h2 id="vehicleTitle">Your vehicle can be more than transportation.</h2>
+      <p id="vehicleText">
+        Vehicle equity is the portion of your vehicle's value that you have already paid for.
+        The provider can consider that equity alongside income, expenses, vehicle details and credit history.
+      </p>
+      <div class="vehicle-points" id="vehiclePoints">
+        <div class="vehicle-point" id="vehiclePoint1"><span>01</span><div><b>Equity matters.</b> The value and equity in your vehicle can support qualification.</div></div>
+        <div class="vehicle-point" id="vehiclePoint2"><span>02</span><div><b>Your credit history isn't the only factor.</b> Multiple parts of your financial picture may be considered.</div></div>
+        <div class="vehicle-point" id="vehiclePoint3"><span>03</span><div><b>You keep driving.</b> A lien may be recorded on the title while you keep possession of the vehicle.</div></div>
+      </div>
+    </div>
+    <div class="vehicle-image" id="vehicleLifestyleImageURL" aria-label="Vehicle lifestyle image"></div>
+  </div>
+</section>
+
+<!-- TITLE -->
+<section class="section title-section" id="titleSection">
+  <div class="container title-grid">
+    <div class="title-copy">
+      <div class="kicker" id="titleKicker">What happens to your title</div>
+      <h2 id="titleHeading">Your vehicle stays with you.</h2>
+      <p id="titleDescription">If approved, a lien can be recorded on the vehicle title as security for the account. You continue driving and maintaining the vehicle according to the provider's terms.</p>
+      <ul class="title-list" id="titleList">
+        <li id="titleList1">You keep possession of your vehicle.</li>
+        <li id="titleList2">You continue driving it.</li>
+        <li id="titleList3">Registration and insurance remain in your name.</li>
+        <li id="titleList4">The lien can be released after the account is settled under the applicable terms.</li>
+      </ul>
+    </div>
+    <div class="title-image" id="titleImageURL"></div>
+  </div>
+</section>
+
+<!-- WHAT YOU NEED -->
+<section class="section need" id="whatYouNeed">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker" id="needKicker">What you need</div>
+      <h2 id="needHeading">Know what matters before you continue.</h2>
+      <p id="needIntro">Eligibility is determined by the provider. These are the main areas to understand before applying.</p>
+    </div>
+    <div class="need-grid" id="needGrid">
+      <article class="need-card" id="needCard1">
+        <h3 id="needCard1Title">Vehicle</h3>
+        <p id="needCard1Text">A safe, working vehicle and a vehicle title in your name are part of the process.</p>
+        <ul class="need-list" id="needCard1List">
+          <li id="need1a">Vehicle details</li><li id="need1b">Title information</li><li id="need1c">Vehicle value/equity</li>
+        </ul>
+      </article>
+      <article class="need-card dark" id="needCard2">
+        <h3 id="needCard2Title">You</h3>
+        <p id="needCard2Text">The provider may consider your identity, income and ability to repay alongside credit history.</p>
+        <ul class="need-list" id="needCard2List">
+          <li id="need2a">Government-issued ID</li><li id="need2b">Income information</li><li id="need2c">Ability to repay</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section get" id="whatYouGet">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker" id="getKicker">What you get</div>
+      <h2 id="getHeading">Credit designed around the value in your vehicle.</h2>
+      <p id="getIntro">This is a revolving credit product, giving you available credit rather than simply handing you a one-time cash loan.</p>
+    </div>
+    <div class="get-grid" id="getGrid">
+      <article class="get-card" id="getCard1"><div class="get-icon" id="getIcon1">01</div><h3 id="getTitle1">Revolving credit</h3><p id="getText1">Use available credit, make payments and potentially reuse available credit.</p></article>
+      <article class="get-card" id="getCard2"><div class="get-icon" id="getIcon2">02</div><h3 id="getTitle2">Virtual card</h3><p id="getText2">A virtual card may become available after approval so you can begin using your credit.</p></article>
+      <article class="get-card" id="getCard3"><div class="get-icon" id="getIcon3">03</div><h3 id="getTitle3">Cashback</h3><p id="getText3">Eligible purchases may earn cashback when the program conditions are met.</p></article>
+      <article class="get-card" id="getCard4"><div class="get-icon" id="getIcon4">04</div><h3 id="getTitle4">Credit reporting</h3><p id="getText4">Payment activity may be reported to major credit bureaus.</p></article>
+      <article class="get-card" id="getCard5"><div class="get-icon" id="getIcon5">05</div><h3 id="getTitle5">No deposit</h3><p id="getText5">The product is designed without requiring a traditional security deposit.</p></article>
+      <article class="get-card" id="getCard6"><div class="get-icon" id="getIcon6">06</div><h3 id="getTitle6">Potential limit increases</h3><p id="getText6">Eligible customers may receive automatic credit-limit increases according to provider criteria.</p></article>
+    </div>
+    <div class="get-note" id="getNote">All features are subject to eligibility, account terms and provider conditions.</div>
+  </div>
+</section>
+
+<!-- REFINANCE -->
+<section class="refi" id="refinanceSection">
+  <div class="container">
+    <div class="refi-box" id="refinanceBox">
+      <div>
+        <div class="kicker" style="color:#ffab8f" id="refiKicker">Still paying off your vehicle?</div>
+        <h2 id="refiTitle">A current auto loan may still have a path forward.</h2>
+        <p id="refiText">Depending on your situation, a refinance option may allow an auto-loan refinance and card application to be handled together. Availability depends on the provider.</p>
+      </div>
+      <div class="refi-side" id="refiSide">
+        <div id="refiPoint1"><b>Vehicle-backed</b>Your vehicle remains central to the credit decision.</div>
+        <div id="refiPoint2"><b>Flexible situation</b>Existing vehicle financing does not automatically mean you cannot continue.</div>
+        <div id="refiPoint3"><b>Provider review</b>Final eligibility and terms are determined during the application.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONE CREDIT CHECK ACTION -->
+<section class="credit" id="creditCheckStep">
+  <div class="container">
+    <div class="credit-box" id="creditCheckBox">
+      <div>
+        <div class="kicker" id="creditKicker">Before you continue</div>
+        <h2 id="creditHeading">Check your credit as one step in the journey.</h2>
+        <p id="creditText">This is not the purpose of the page. It is simply a preparation step before you return here and continue toward the vehicle-backed credit product.</p>
+      </div>
+      <div class="credit-action" id="creditAction">
+        <span class="credit-action-label" id="creditActionLabel">One action</span>
+        <a href="YOUR_EXTERNAL_CREDIT_CHECK_URL" target="_blank" rel="noopener" class="btn btn-orange" id="creditCheckButton">Check Your Credit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPLOAD: hidden until customer comes back -->
+<section class="upload" id="screenshotUploadSection" aria-labelledby="uploadHeading">
+  <div class="container">
+    <div class="upload-grid">
+      <div>
+        <div class="kicker" id="uploadKicker">Welcome back</div>
+        <h2 id="uploadHeading">Continue where you left off.</h2>
+        <p class="upload-intro" id="uploadIntro">After checking your credit on the external site, return here and attach the screenshot showing your name and credit score. This version only previews the image locally in your browser.</p>
+      </div>
+      <div class="upload-box" id="screenshotUploadBox">
+        <h3 id="uploadBoxTitle">Attach your screenshot</h3>
+        <p id="uploadBoxText">Only upload the relevant screenshot. Do not upload passwords, bank details, card numbers or other sensitive information.</p>
+        <input class="file-input" type="file" id="creditScreenshotInput" accept="image/png,image/jpeg,image/webp">
+        <label class="choose" for="creditScreenshotInput" id="chooseScreenshotButton">Choose Screenshot</label>
+        <div class="file-name" id="selectedFileName">No file selected</div>
+        <img class="preview" id="creditScreenshotPreview" alt="Credit score screenshot preview">
+        <button type="button" class="btn continue" id="creditContinueButton" disabled>Continue</button>
+        <p class="upload-disclaimer" id="uploadDisclaimer">No server upload is claimed by this front-end. Connect a secure backend later if you want to store the image.</p>
+      </div>
+    </div>
+
+    <!-- This is the key bridge: NO automatic redirect -->
+    <div class="next-step" id="nextStepSection" aria-live="polite">
+      <div class="kicker" id="nextStepKicker">You're ready for the next step</div>
+      <h2 id="nextStepHeading">Now explore your available vehicle-backed credit options.</h2>
+      <p id="nextStepText">You've completed the credit-check step. The next step is to continue to the product provider, review your available offer and decide whether you want to apply.</p>
+      <a href="YOUR_YENDO_AFFILIATE_LINK" target="_blank" rel="noopener" class="btn" id="nextStepAffiliateButton">See Your Options</a>
+      <p class="next-note" id="nextStepNote">This button takes you to the product provider through our referral link.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL / SOCIAL PROOF -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="test-head">
+      <div class="kicker" id="testimonialKicker">From people who have used it</div>
+      <h2 id="testimonialHeading">A product people use in real life.</h2>
+    </div>
+    <div class="test-grid" id="testimonialGrid">
+      <div class="person" id="person1" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_1_URL')"><span id="person1Name">Customer</span></div>
+      <div class="person" id="person2" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_2_URL')"><span id="person2Name">Customer</span></div>
+      <div class="person active" id="person3" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_3_URL')"><span id="person3Name">Customer</span></div>
+      <div class="person" id="person4" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_4_URL')"><span id="person4Name">Customer</span></div>
+      <div class="person" id="person5" style="background-image:url('YOUR_TESTIMONIAL_IMAGE_5_URL')"><span id="person5Name">Customer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="terms" id="terms">
+  <div class="container terms-grid">
+    <div>
+      <div class="kicker" id="termsKicker">Before you apply</div>
+      <h2 id="termsHeading">Credit card rates, fees and terms.</h2>
+      <p id="termsIntro" style="font-size:10px;color:var(--muted);margin-top:13px">Exact rates, fees and account terms depend on the approved account. Review the provider's current terms before applying.</p>
+    </div>
+    <div>
+      <div class="rate-table" id="rateTable">
+        <div class="rate-row" id="rateRow1"><span>Credit limit</span><span>Varies by approved account</span></div>
+        <div class="rate-row" id="rateRow2"><span>Annual fee</span><span>May apply</span></div>
+        <div class="rate-row" id="rateRow3"><span>Purchase APR</span><span>Varies by approved account</span></div>
+        <div class="rate-row" id="rateRow4"><span>Cash advance</span><span>Fees / APR may apply</span></div>
+        <div class="rate-row" id="rateRow5"><span>Vehicle title lien</span><span>May apply</span></div>
+      </div>
+      <div class="rate-note" id="rateNote">Do not rely on this summary for final pricing. The provider's current disclosures and approved account terms control.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container faq-grid">
+    <div>
+      <div class="kicker" id="faqKicker">Questions people ask</div>
+      <h2 id="faqHeading">Before they apply.</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <details id="faq1"><summary id="faqQ1">Is this a loan or a credit card?</summary><p id="faqA1">It is positioned as a vehicle-backed revolving credit card / credit line rather than a simple one-time cash loan.</p></details>
+      <details id="faq2"><summary id="faqQ2">Does my credit have to be perfect?</summary><p id="faqA2">Not necessarily. The provider considers multiple factors including vehicle information, income, expenses, ability to repay and credit history.</p></details>
+      <details id="faq3"><summary id="faqQ3">Can I keep driving my vehicle?</summary><p id="faqA3">Yes. If approved, you generally keep possession and continue driving the vehicle while a lien may be recorded on the title.</p></details>
+      <details id="faq4"><summary id="faqQ4">Can I still qualify if I am paying off my vehicle?</summary><p id="faqA4">Potentially. A refinance path may be available depending on your situation and the provider's requirements.</p></details>
+      <details id="faq5"><summary id="faqQ5">Why do I upload my credit screenshot here?</summary><p id="faqA5">It is part of this landing page's custom customer journey. The external credit-check service is separate from the product provider. The screenshot is not presented as an official provider requirement.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL PRODUCT CTA -->
+<section class="final" id="finalCTASection">
+  <div class="container final-inner">
+    <div class="final-copy">
+      <div class="kicker" id="finalKicker">Ready for the product?</div>
+      <h2 id="finalHeading">See what you may qualify for.</h2>
+      <p id="finalText">You've learned how the vehicle-backed credit product works. When you're ready, continue to the provider to explore your available option and complete the application there.</p>
+      <a href="YOUR_YENDO_AFFILIATE_LINK" target="_blank" rel="noopener" class="btn btn-light" id="bottomAffiliateButton">Get Started</a>
+    </div>
+    <div class="final-image" id="finalCTAImageURL" aria-label="Product lifestyle image"></div>
+  </div>
+</section>
+
 </main>
-<footer id="siteFooter"><div class="wrap"><div class="foot"><div><div class="brand"><span class="mark">V</span><span>Vehicle Credit</span></div><p>Independent informational and affiliate page helping visitors understand vehicle-backed credit before deciding whether to continue.</p></div><div class="footlinks"><div><strong>Product</strong><a href="#howItWorks">How It Works</a><a href="#whatYouGet">What You Get</a><a href="#requirements">Requirements</a></div><div><strong>Information</strong><a href="#terms">Terms</a><a href="#faq">FAQ</a><a href="#creditCheckStep">Credit Step</a></div></div></div><div class="bottom"><span>© 2026 Vehicle Credit</span><span>Eligibility, rates, fees and terms are determined by the provider.</span></div></div></footer>
+
+<footer id="siteFooter">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" id="footerLogo"><span class="logo-mark" id="footerLogoMark">V</span><span id="footerBrandText">Vehicle Credit</span></div>
+        <p id="footerDescription">Independent informational / affiliate page. This page is not the official product provider website.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col" id="footerProduct"><strong>Product</strong><a href="#howItWorks" id="footerHowLink">How It Works</a><a href="#whatYouGet" id="footerGetLink">What You Get</a><a href="#whatYouNeed" id="footerNeedLink">What You Need</a></div>
+        <div class="footer-col" id="footerInfo"><strong>Info</strong><a href="#terms" id="footerTermsLink">Terms</a><a href="#faq" id="footerFAQLink">FAQ</a><a href="#creditCheckStep" id="footerCreditLink">Credit Step</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom" id="footerBottom"><span id="copyright">© 2026 Vehicle Credit</span><span id="footerDisclaimer">Eligibility, rates, fees and terms are determined by the product provider.</span></div>
+  </div>
+</footer>
+
 <script>
-/* ===================== REPLACEABLE URL MAP ===================== */
-const URLS={
-  heroBackgroundImageURL:'YOUR_HERO_BACKGROUND_IMAGE_URL',
-  vehicleConceptImageURL:'YOUR_VEHICLE_IMAGE_URL',
-  lifestyleImageURL:'YOUR_CUSTOMER_OR_LIFESTYLE_IMAGE_URL',
-  externalCreditCheckURL:'YOUR_EXTERNAL_CREDIT_CHECK_URL',
-  yendoAffiliateURL:'YOUR_YENDO_AFFILIATE_LINK'
+/* =========================================================
+   URL CONFIG — REPLACE THESE VALUES ONLY
+   ========================================================= */
+const URLS = {
+  heroBackgroundImageURL: "YOUR_HERO_BACKGROUND_IMAGE_URL",
+  heroCardImageURL: "YOUR_HERO_CARD_IMAGE_URL",
+  vehicleLifestyleImageURL: "YOUR_VEHICLE_LIFESTYLE_IMAGE_URL",
+  titleImageURL: "YOUR_TITLE_IMAGE_URL",
+  stepOneImageURL: "YOUR_STEP_ONE_IMAGE_URL",
+  stepTwoImageURL: "YOUR_STEP_TWO_IMAGE_URL",
+  stepThreeImageURL: "YOUR_STEP_THREE_IMAGE_URL",
+  finalCTAImageURL: "YOUR_FINAL_CTA_IMAGE_URL",
+  testimonial1: "YOUR_TESTIMONIAL_IMAGE_1_URL",
+  testimonial2: "YOUR_TESTIMONIAL_IMAGE_2_URL",
+  testimonial3: "YOUR_TESTIMONIAL_IMAGE_3_URL",
+  testimonial4: "YOUR_TESTIMONIAL_IMAGE_4_URL",
+  testimonial5: "YOUR_TESTIMONIAL_IMAGE_5_URL",
+  externalCreditCheckURL: "YOUR_EXTERNAL_CREDIT_CHECK_URL",
+  yendoAffiliateURL: "YOUR_YENDO_AFFILIATE_LINK"
 };
-const hero=document.getElementById('heroSection');
-hero.style.backgroundImage=`url("${URLS.heroBackgroundImageURL}")`;
-document.getElementById('vehicleConceptImageURL').style.backgroundImage=`linear-gradient(135deg,#6d102428,#6d1024b8),url("${URLS.vehicleConceptImageURL}")`;
-document.getElementById('lifestyleImageURL').style.backgroundImage=`url("${URLS.lifestyleImageURL}")`;
-document.getElementById('headerCreditCheckLink').href=URLS.externalCreditCheckURL;
-document.getElementById('creditCheckButton').href=URLS.externalCreditCheckURL;
-document.getElementById('nextStepAffiliateButton').href=URLS.yendoAffiliateURL;
-document.getElementById('bottomAffiliateButton').href=URLS.yendoAffiliateURL;
-/* ===================== CREDIT CHECK FLOW ===================== */
-const input=document.getElementById('creditScreenshotInput');
-const preview=document.getElementById('creditScreenshotPreview');
-const nameBox=document.getElementById('selectedFileName');
-const cont=document.getElementById('creditContinueButton');
-const upload=document.getElementById('screenshotUploadSection');
-const next=document.getElementById('nextStepSection');
-function showUpload(){upload.classList.add('show');setTimeout(()=>upload.scrollIntoView({behavior:'smooth',block:'start'}),80)}
-/* The customer manually returns from the external credit site. A small return hook is provided here. */
-window.showCreditScreenshotStep=showUpload;
-input.addEventListener('change',()=>{
- const file=input.files?.[0];
- if(!file){preview.classList.remove('show');preview.src='';nameBox.textContent='No file selected';cont.disabled=true;cont.classList.remove('ready');return}
- if(!file.type.startsWith('image/')){nameBox.textContent='Please choose an image file.';return}
- nameBox.textContent=file.name;
- const reader=new FileReader();
- reader.onload=e=>{preview.src=e.target.result;preview.classList.add('show');cont.disabled=false;cont.classList.add('ready')};
- reader.readAsDataURL(file);
+
+/* Image URL application */
+document.getElementById("heroSection").style.backgroundImage =
+  `linear-gradient(100deg,rgba(82,5,20,.96) 0%,rgba(112,8,30,.91) 52%,rgba(112,8,30,.58) 100%),url("${URLS.heroBackgroundImageURL}")`;
+document.getElementById("heroCardImageURL").style.backgroundImage =
+  `url("${URLS.heroCardImageURL}")`;
+document.getElementById("vehicleLifestyleImageURL").style.backgroundImage =
+  `url("${URLS.vehicleLifestyleImageURL}")`;
+document.getElementById("titleImageURL").style.backgroundImage =
+  `url("${URLS.titleImageURL}")`;
+document.getElementById("step1Image").style.backgroundImage =
+  `url("${URLS.stepOneImageURL}")`;
+document.getElementById("step2Image").style.backgroundImage =
+  `url("${URLS.stepTwoImageURL}")`;
+document.getElementById("step3Image").style.backgroundImage =
+  `url("${URLS.stepThreeImageURL}")`;
+document.getElementById("finalCTAImageURL").style.backgroundImage =
+  `url("${URLS.finalCTAImageURL}")`;
+
+/* Credit check = ONE action only */
+document.getElementById("headerCreditCheckLink").href = URLS.externalCreditCheckURL;
+document.getElementById("creditCheckButton").href = URLS.externalCreditCheckURL;
+
+/* Affiliate = final product action only */
+document.getElementById("nextStepAffiliateButton").href = URLS.yendoAffiliateURL;
+document.getElementById("bottomAffiliateButton").href = URLS.yendoAffiliateURL;
+
+/* Screenshot journey */
+const input = document.getElementById("creditScreenshotInput");
+const preview = document.getElementById("creditScreenshotPreview");
+const fileName = document.getElementById("selectedFileName");
+const continueBtn = document.getElementById("creditContinueButton");
+const uploadSection = document.getElementById("screenshotUploadSection");
+const nextStep = document.getElementById("nextStepSection");
+
+function showUploadStep(){
+  uploadSection.classList.add("visible");
+  setTimeout(() => uploadSection.scrollIntoView({behavior:"smooth",block:"start"}), 80);
+}
+
+function resetUpload(){
+  preview.src="";
+  preview.classList.remove("visible");
+  fileName.textContent="No file selected";
+  continueBtn.disabled=true;
+  continueBtn.classList.remove("ready");
+}
+
+input.addEventListener("change",function(){
+  const file=this.files && this.files[0];
+  if(!file){resetUpload();return;}
+  if(!file.type.startsWith("image/")){
+    resetUpload();
+    fileName.textContent="Please choose an image file.";
+    return;
+  }
+  fileName.textContent=file.name;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    preview.src=e.target.result;
+    preview.classList.add("visible");
+    continueBtn.disabled=false;
+    continueBtn.classList.add("ready");
+  };
+  reader.readAsDataURL(file);
 });
-cont.addEventListener('click',()=>{if(cont.disabled)return;next.classList.add('show');setTimeout(()=>next.scrollIntoView({behavior:'smooth',block:'center'}),80)});
-/* Header becomes a compact translucent bar after scrolling. */
-window.addEventListener('scroll',()=>{const h=document.getElementById('siteHeader');if(scrollY>80){h.style.background='#300711e8';h.style.backdropFilter='blur(12px)'}else{h.style.background='transparent';h.style.backdropFilter='none'}},{passive:true});
+
+continueBtn.addEventListener("click",function(){
+  if(this.disabled)return;
+  nextStep.classList.add("visible");
+  setTimeout(()=>nextStep.scrollIntoView({behavior:"smooth",block:"center"}),80);
+});
+
+/*
+  IMPORTANT:
+  We do NOT automatically redirect after Continue.
+  The user must deliberately click See Your Options / Get Started.
+*/
+
+/* Header readability after scrolling */
+const header=document.getElementById("siteHeader");
+window.addEventListener("scroll",()=>{
+  if(window.scrollY>50){
+    header.style.background="rgba(77,5,20,.9)";
+    header.style.backdropFilter="blur(10px)";
+  }else{
+    header.style.background="transparent";
+    header.style.backdropFilter="none";
+  }
+},{passive:true});
 </script>
-</body></html>
+</body>
+</html>
