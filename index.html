@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Explore vehicle-backed credit, understand how it works, check your credit as one step, and continue to your available options.">
-<title>The Auto Card — Vehicle-Backed Credit</title>
+<title>The Auto Card — Vehicle-Backed Credit | V3</title>
 <style>
 :root{
   --red:#760b22;
@@ -279,6 +279,974 @@ footer{background:#111011;color:#fff;padding:35px 0 20px;border-top:1px solid rg
   .footer-links{gap:30px}
   .final-image{width:70%;opacity:.45}
 }
+
+/* =========================================================
+   V3 VISUAL HIERARCHY + MOBILE OPTIMIZATION
+   Content is intentionally unchanged.
+   This layer fixes scale, spacing, hierarchy and readability.
+   ========================================================= */
+
+body{
+  font-size:16px;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+.container{
+  width:min(calc(100% - 64px),1280px);
+}
+.section{
+  padding:105px 0;
+}
+.kicker{
+  font-size:11px;
+  letter-spacing:.16em;
+  margin-bottom:18px;
+}
+.section-head h2,
+.section-head h2,
+.steps-head h2{
+  font-size:clamp(48px,5.2vw,76px);
+  line-height:.94;
+}
+.section-head p{
+  font-size:15px;
+  line-height:1.65;
+  max-width:700px;
+}
+
+/* Header */
+.nav{
+  height:82px;
+}
+.logo{
+  font-size:13px;
+}
+.nav-links{
+  gap:30px;
+  font-size:11px;
+}
+.nav-check{
+  padding:9px 15px;
+}
+
+/* Hero */
+.hero,
+.hero-inner{
+  min-height:720px;
+}
+.hero-copy{
+  width:56%;
+  padding-top:55px;
+}
+.hero h1{
+  font-size:clamp(58px,7vw,94px);
+  line-height:.9;
+  max-width:690px;
+}
+.hero-sub{
+  font-size:24px;
+  line-height:1.08;
+  max-width:540px;
+  margin-top:22px;
+}
+.hero-text{
+  font-size:14px;
+  line-height:1.6;
+  max-width:535px;
+  margin-top:18px;
+}
+.hero-points{
+  margin-top:20px;
+  gap:8px;
+  font-size:12px;
+}
+.hero-actions{
+  margin-top:28px;
+}
+.btn{
+  min-height:48px;
+  padding:0 23px;
+  font-size:12px;
+}
+.hero-note{
+  font-size:9px;
+  margin-top:11px;
+}
+.hero-product-visual{
+  width:53%;
+  height:560px;
+}
+
+/* Stats */
+.stats-grid{
+  grid-template-columns:repeat(4,1fr);
+}
+.stat{
+  min-height:112px;
+  padding:25px 30px;
+}
+.stat strong{
+  font-size:30px;
+}
+.stat span{
+  font-size:10px;
+  line-height:1.4;
+  margin-top:6px;
+}
+
+/* Three steps */
+.steps-head{
+  max-width:850px;
+}
+.steps-head h2{
+  font-size:clamp(48px,5.2vw,70px);
+  margin:0;
+}
+.steps-head p{
+  font-size:14px;
+  line-height:1.6;
+}
+.steps-grid{
+  margin-top:48px;
+  gap:8px;
+}
+.step{
+  min-height:355px;
+  padding:28px 28px 20px;
+}
+.step-no{
+  width:30px;
+  height:30px;
+  font-size:10px;
+}
+.step h3{
+  font-size:34px;
+  line-height:.98;
+  margin-top:35px;
+}
+.step p{
+  font-size:12px;
+  line-height:1.55;
+  max-width:300px;
+}
+.step-art{
+  height:115px;
+  margin-top:25px;
+}
+
+/* Vehicle section */
+.vehicle-inner{
+  min-height:500px;
+  grid-template-columns:.9fr 1.1fr;
+}
+.vehicle-copy{
+  padding:85px 55px 85px 0;
+}
+.vehicle h2{
+  font-size:clamp(48px,5vw,70px);
+  line-height:.93;
+}
+.vehicle-copy p{
+  font-size:14px;
+  line-height:1.65;
+  max-width:500px;
+  margin-top:19px;
+}
+.vehicle-points{
+  margin-top:27px;
+  gap:13px;
+}
+.vehicle-point{
+  font-size:12px;
+  line-height:1.45;
+}
+.vehicle-image{
+  min-height:500px;
+}
+
+/* Title */
+.title-grid{
+  gap:90px;
+}
+.title-image{
+  min-height:480px;
+}
+.title-copy h2{
+  font-size:clamp(48px,5vw,70px);
+  line-height:.93;
+}
+.title-copy p{
+  font-size:14px;
+  line-height:1.65;
+}
+.title-list{
+  margin-top:27px;
+  gap:13px;
+}
+.title-list li{
+  font-size:12px;
+  line-height:1.45;
+}
+
+/* Need */
+.need-grid{
+  gap:8px;
+  margin-top:48px;
+}
+.need-card{
+  padding:38px 38px;
+  min-height:270px;
+}
+.need-card h3{
+  font-size:36px;
+}
+.need-card p{
+  font-size:13px;
+  line-height:1.6;
+  max-width:450px;
+}
+.need-list{
+  margin-top:22px;
+  gap:10px;
+}
+.need-list li{
+  font-size:11px;
+}
+
+/* Get */
+.get-grid{
+  gap:8px;
+  margin-top:48px;
+}
+.get-card{
+  padding:30px;
+  min-height:205px;
+}
+.get-icon{
+  width:25px;
+  height:25px;
+  font-size:9px;
+}
+.get-card h3{
+  font-size:29px;
+  margin-top:28px;
+}
+.get-card p{
+  font-size:11px;
+  line-height:1.55;
+}
+.get-note{
+  font-size:10px;
+  margin-top:19px;
+}
+
+/* Refinance */
+.refi{
+  padding:65px 0;
+}
+.refi-box{
+  padding:48px 50px;
+  gap:55px;
+}
+.refi-box h2{
+  font-size:clamp(40px,4.5vw,60px);
+  line-height:.94;
+}
+.refi-box p{
+  font-size:12px;
+  line-height:1.6;
+}
+.refi-side{
+  padding-left:40px;
+  gap:17px;
+}
+.refi-side div{
+  font-size:11px;
+  line-height:1.5;
+}
+.refi-side b{
+  font-size:12px;
+}
+
+/* Credit check */
+.credit{
+  padding:75px 0 35px;
+}
+.credit-box{
+  padding:48px 52px;
+  gap:55px;
+}
+.credit h2{
+  font-size:clamp(42px,4.8vw,62px);
+  line-height:.94;
+}
+.credit p{
+  font-size:13px;
+  line-height:1.6;
+}
+.credit-action-label{
+  font-size:9px;
+}
+.credit-action .btn{
+  min-width:170px;
+}
+
+/* Upload */
+.upload{
+  padding:60px 0 35px;
+}
+.upload-grid{
+  gap:75px;
+}
+.upload h2{
+  font-size:clamp(48px,5vw,70px);
+  line-height:.93;
+}
+.upload-intro{
+  font-size:14px;
+  line-height:1.65;
+}
+.upload-box{
+  padding:38px;
+}
+.upload-box h3{
+  font-size:34px;
+}
+.upload-box p{
+  font-size:11px;
+  line-height:1.55;
+}
+.choose{
+  min-height:44px;
+  padding:0 20px;
+  font-size:11px;
+}
+.file-name{
+  font-size:10px;
+}
+.preview{
+  max-width:230px;
+  max-height:230px;
+}
+.continue{
+  min-height:48px;
+}
+.upload-disclaimer{
+  font-size:9px!important;
+}
+
+/* Next step */
+.next-step{
+  margin-top:35px;
+  padding:65px 40px;
+}
+.next-step h2{
+  font-size:clamp(46px,5vw,68px);
+  line-height:.93;
+}
+.next-step p{
+  font-size:13px;
+  line-height:1.6;
+  max-width:680px;
+}
+.next-step .btn{
+  min-width:190px;
+}
+
+/* Testimonials */
+.testimonials{
+  padding:90px 0;
+}
+.test-head h2{
+  font-size:clamp(42px,5vw,60px);
+}
+.test-grid{
+  margin-top:42px;
+  gap:8px;
+}
+.person{
+  width:155px;
+  height:215px;
+}
+.person.active{
+  width:180px;
+  height:255px;
+}
+.person span{
+  font-size:10px;
+}
+
+/* Terms */
+.terms{
+  padding:90px 0;
+}
+.terms-grid{
+  gap:85px;
+}
+.terms h2{
+  font-size:clamp(44px,4.8vw,62px);
+  line-height:.94;
+}
+.terms-grid > div:first-child p{
+  font-size:12px!important;
+  line-height:1.6;
+}
+.rate-row{
+  padding:15px 18px;
+  font-size:11px;
+}
+.rate-note{
+  font-size:9px;
+  line-height:1.5;
+}
+
+/* FAQ */
+.faq{
+  padding:75px 0 100px;
+}
+.faq-grid{
+  gap:80px;
+}
+.faq h2{
+  font-size:clamp(44px,4.8vw,62px);
+  line-height:.94;
+}
+details{
+  padding:18px 0;
+}
+summary{
+  font-size:12px;
+}
+details p{
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* Final */
+.final-inner{
+  min-height:440px;
+}
+.final-copy{
+  max-width:560px;
+}
+.final h2{
+  font-size:clamp(50px,5vw,72px);
+  line-height:.93;
+}
+.final p{
+  font-size:13px;
+  line-height:1.6;
+}
+.final-image{
+  width:58%;
+}
+
+/* Footer */
+footer{
+  padding:48px 0 25px;
+}
+.footer-brand p{
+  font-size:9px;
+  line-height:1.5;
+}
+.footer-links{
+  gap:70px;
+}
+.footer-col strong{
+  font-size:10px;
+}
+.footer-col a{
+  font-size:9px;
+  margin-top:9px;
+}
+.footer-bottom{
+  font-size:8px;
+}
+
+/* =========================================================
+   MOBILE — deliberate single-column editorial layout
+   ========================================================= */
+@media(max-width:850px){
+  .container{
+    width:min(calc(100% - 40px),720px);
+  }
+
+  .section{
+    padding:78px 0;
+  }
+
+  .hero,
+  .hero-inner{
+    min-height:760px;
+  }
+
+  .hero-copy{
+    width:67%;
+    padding-top:55px;
+  }
+
+  .hero-product-visual{
+    width:52%;
+    height:420px;
+    right:-8%;
+  }
+
+  .steps-grid,
+  .get-grid{
+    grid-template-columns:1fr;
+  }
+
+  .step{
+    min-height:330px;
+  }
+
+  .vehicle-inner{
+    grid-template-columns:1fr;
+  }
+
+  .vehicle-copy{
+    padding:72px 0 60px;
+  }
+
+  .vehicle-image{
+    min-height:390px;
+  }
+
+  .title-grid,
+  .terms-grid,
+  .faq-grid,
+  .upload-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .title-image{
+    min-height:360px;
+    order:2;
+  }
+
+  .title-copy{
+    order:1;
+  }
+
+  .credit-box{
+    grid-template-columns:1fr;
+  }
+
+  .credit-action{
+    text-align:left;
+  }
+
+  .refi-box{
+    grid-template-columns:1fr;
+  }
+
+  .refi-side{
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.2);
+    padding:24px 0 0;
+  }
+
+  .final-inner{
+    min-height:500px;
+  }
+
+  .final-copy{
+    max-width:480px;
+  }
+
+  .final-image{
+    width:72%;
+    opacity:.5;
+  }
+}
+
+@media(max-width:620px){
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .section{
+    padding:64px 0;
+  }
+
+  .kicker{
+    font-size:9px;
+    letter-spacing:.14em;
+    margin-bottom:14px;
+  }
+
+  /* Mobile header */
+  .nav{
+    height:62px;
+  }
+  .logo{
+    font-size:11px;
+  }
+  .nav-links{
+    gap:8px;
+    font-size:8px;
+  }
+  .nav-links a:not(.nav-check){
+    display:none;
+  }
+  .nav-check{
+    padding:7px 10px;
+  }
+
+  /* Mobile hero */
+  .hero,
+  .hero-inner{
+    min-height:690px;
+  }
+  .hero-inner{
+    align-items:flex-start;
+    padding-top:108px;
+  }
+  .hero-copy{
+    width:100%;
+    padding-top:0;
+  }
+  .hero h1{
+    font-size:54px;
+    line-height:.91;
+    max-width:420px;
+  }
+  .hero-sub{
+    font-size:19px;
+    max-width:360px;
+    margin-top:17px;
+  }
+  .hero-text{
+    font-size:11px;
+    line-height:1.55;
+    max-width:360px;
+  }
+  .hero-points{
+    font-size:10px;
+    gap:6px;
+    max-width:365px;
+  }
+  .hero-actions{
+    margin-top:21px;
+  }
+  .btn{
+    min-height:44px;
+    padding:0 18px;
+    font-size:10px;
+  }
+  .hero-note{
+    font-size:7px;
+    max-width:320px;
+  }
+  .hero-product-visual{
+    width:75%;
+    height:300px;
+    right:-16%;
+    bottom:-20px;
+    top:auto;
+    transform:none;
+    opacity:.78;
+  }
+
+  /* Stats become clean 2x2 */
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .stat{
+    min-height:94px;
+    padding:18px 15px;
+  }
+  .stat strong{
+    font-size:21px;
+  }
+  .stat span{
+    font-size:8px;
+    line-height:1.35;
+  }
+
+  /* Section headings */
+  .section-head h2,
+  .steps-head h2{
+    font-size:44px;
+    line-height:.95;
+  }
+  .section-head p,
+  .steps-head p{
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  /* Steps */
+  .steps-grid{
+    margin-top:30px;
+    gap:6px;
+  }
+  .step{
+    min-height:275px;
+    padding:22px;
+  }
+  .step h3{
+    font-size:29px;
+    margin-top:25px;
+  }
+  .step p{
+    font-size:10px;
+    line-height:1.5;
+  }
+  .step-art{
+    height:75px;
+    margin-top:14px;
+  }
+
+  /* Vehicle */
+  .vehicle-copy{
+    padding:60px 0 50px;
+  }
+  .vehicle h2{
+    font-size:45px;
+  }
+  .vehicle-copy p{
+    font-size:11px;
+    line-height:1.55;
+  }
+  .vehicle-point{
+    font-size:10px;
+  }
+  .vehicle-image{
+    min-height:285px;
+  }
+
+  /* Title */
+  .title-grid{
+    gap:30px;
+  }
+  .title-copy h2{
+    font-size:45px;
+  }
+  .title-copy p{
+    font-size:11px;
+  }
+  .title-list li{
+    font-size:10px;
+  }
+  .title-image{
+    min-height:275px;
+  }
+
+  /* Need */
+  .need-grid{
+    margin-top:30px;
+  }
+  .need-card{
+    min-height:0;
+    padding:28px 25px;
+  }
+  .need-card h3{
+    font-size:31px;
+  }
+  .need-card p{
+    font-size:10px;
+  }
+  .need-list li{
+    font-size:9px;
+  }
+
+  /* Get */
+  .get-grid{
+    margin-top:30px;
+  }
+  .get-card{
+    min-height:165px;
+    padding:23px;
+  }
+  .get-card h3{
+    font-size:27px;
+    margin-top:20px;
+  }
+  .get-card p{
+    font-size:10px;
+  }
+
+  /* Refinance */
+  .refi{
+    padding:45px 0;
+  }
+  .refi-box{
+    padding:30px 24px;
+    gap:25px;
+  }
+  .refi-box h2{
+    font-size:38px;
+  }
+  .refi-box p{
+    font-size:10px;
+  }
+  .refi-side div{
+    font-size:9px;
+  }
+
+  /* Credit check */
+  .credit{
+    padding:50px 0 20px;
+  }
+  .credit-box{
+    padding:28px 23px;
+    gap:25px;
+  }
+  .credit h2{
+    font-size:39px;
+  }
+  .credit p{
+    font-size:10px;
+  }
+  .credit-action .btn{
+    min-width:155px;
+  }
+
+  /* Upload */
+  .upload{
+    padding:45px 0 20px;
+  }
+  .upload-grid{
+    gap:28px;
+  }
+  .upload h2{
+    font-size:45px;
+  }
+  .upload-intro{
+    font-size:11px;
+  }
+  .upload-box{
+    padding:25px 21px;
+  }
+  .upload-box h3{
+    font-size:29px;
+  }
+  .upload-box p{
+    font-size:9px;
+  }
+  .preview{
+    max-width:180px;
+    max-height:180px;
+  }
+
+  /* Next step */
+  .next-step{
+    margin-top:25px;
+    padding:42px 22px;
+  }
+  .next-step h2{
+    font-size:42px;
+  }
+  .next-step p{
+    font-size:10px;
+  }
+
+  /* Testimonials */
+  .testimonials{
+    padding:65px 0;
+  }
+  .test-head h2{
+    font-size:40px;
+  }
+  .test-grid{
+    justify-content:flex-start;
+    margin-left:-28px;
+    margin-right:-28px;
+    padding:0 28px;
+  }
+  .person{
+    flex:0 0 110px;
+    width:110px;
+    height:165px;
+  }
+  .person.active{
+    flex:0 0 125px;
+    width:125px;
+    height:190px;
+  }
+
+  /* Terms */
+  .terms{
+    padding:65px 0;
+  }
+  .terms h2{
+    font-size:40px;
+  }
+  .terms-grid > div:first-child p{
+    font-size:10px!important;
+  }
+  .rate-row{
+    grid-template-columns:1fr 1fr;
+    padding:12px 10px;
+    font-size:9px;
+  }
+
+  /* FAQ */
+  .faq{
+    padding:55px 0 70px;
+  }
+  .faq-grid{
+    gap:28px;
+  }
+  .faq h2{
+    font-size:40px;
+  }
+  details{
+    padding:14px 0;
+  }
+  summary{
+    font-size:9px;
+  }
+  details p{
+    font-size:9px;
+  }
+
+  /* Final CTA */
+  .final-inner{
+    min-height:500px;
+  }
+  .final-copy{
+    max-width:330px;
+  }
+  .final h2{
+    font-size:47px;
+  }
+  .final p{
+    font-size:10px;
+  }
+  .final-image{
+    width:95%;
+    right:-35%;
+    opacity:.35;
+  }
+
+  /* Footer */
+  footer{
+    padding:35px 0 18px;
+  }
+  .footer-top{
+    gap:30px;
+  }
+  .footer-links{
+    gap:35px;
+  }
+  .footer-brand p{
+    font-size:8px;
+  }
+  .footer-col strong{
+    font-size:9px;
+  }
+  .footer-col a{
+    font-size:8px;
+  }
+  .footer-bottom{
+    gap:8px;
+    font-size:7px;
+  }
+}
+
 </style>
 </head>
 
